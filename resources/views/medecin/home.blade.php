@@ -69,13 +69,13 @@
                 <div class="form-group row">
                     <label for="nombre" class="col-md-4 col-form-label text-md-right">{{__('Nombre de Rendez Vous')}}</label>
                     <div id="nombre" class="dropdown col-md-4">
-                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                        <button id="nombrerdv" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
                           Nombre de Rendez Vous
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">1</a>
-                          <a class="dropdown-item" href="#">2</a>
-                          <a class="dropdown-item" href="#">3</a>
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('nombrerdv').innerHTML = 1">1</a>
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('nombrerdv').innerHTML = 2">2</a>
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('nombrerdv').innerHTML = 3">3</a>
                         </div>
                       </div> 
                 </div>
