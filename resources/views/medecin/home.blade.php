@@ -23,17 +23,31 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="DD" class="col-md-4 col-form-label text-md-right">{{__('Date de Debut')}}</label>
-                    <div class="col-md-6">
-                        <input id="DD" type="date" class="form-control" name="DD" autocomplete="DD" autofocus>
-                    </div>
+                    <label for="HD" class="col-md-4 col-form-label text-md-right">{{__('Date de Debut')}}</label>
+                    <div id="HD" class="dropdown col-md-4">
+                        <button id="HDchoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                            Heure de Debut
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '6h'">6h</a>
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '7h'">7h</a>
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '8h'">8h</a>
+                        </div>
+                      </div> 
                 </div>
 
                 <div class="form-group row">
-                    <label for="DF" class="col-md-4 col-form-label text-md-right">{{__('Date de Fermeture')}}</label>
-                    <div class="col-md-6">
-                        <input id="DF" type="date" class="form-control" name="DF" autocomplete="DF" autofocus>
-                    </div>
+                    <label for="HF" class="col-md-4 col-form-label text-md-right">{{__('Date de Fermeture')}}</label>
+                    <div id="HF" class="dropdown col-md-4">
+                        <button id="HFchoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                            Heure de Fermeture
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('HFchoice').innerHTML = '12h'">12h</a>
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('HFchoice').innerHTML = '15h'">15h</a>
+                          <a class="dropdown-item" href="#" onclick="document.getElementById('HFchoice').innerHTML = '16h'">16h</a>
+                        </div>
+                      </div> 
                 </div>
 
                 <div class="form-group row">
