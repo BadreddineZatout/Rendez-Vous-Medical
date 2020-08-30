@@ -60,7 +60,17 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">{{__('Type utilisateur')}}</label>
+                            <div class="col-md-6 mt-2">
+                                <input type="radio" id="admin" name="role" value="admin">
+                                <label class="mr-3" for="admin">Admin</label>
+                                <input type="radio" id="medecin" name="role" value="medecin">
+                                <label class="mr-3" for="medecin">Medecin</label>
+                                <input type="radio" id="patient" name="role" value="patient">
+                                <label class="mr-3" for="patient">Patient</label>
+                            </div>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

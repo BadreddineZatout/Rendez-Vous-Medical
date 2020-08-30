@@ -13,7 +13,7 @@
                 @csrf
                 
                 <div class="form-group row">
-                    <label for="etat" class="col-md-4 col-form-label text-md-right">{{__('Etat du Systeme')}}</label>
+                    <label class="col-md-4 col-form-label text-md-right">{{__('Etat du Systeme')}}</label>
                     <div class="col-md-6 mt-2">
                         <input type="radio" id="oui" name="etatsysteme" value="Oui">
                         <label class="mr-5" for="oui">Oui</label>
