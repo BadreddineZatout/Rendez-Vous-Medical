@@ -1,5 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('content')
-<p>{{dd(Auth::user())}}</p>
+@section('main')
+<p>{{Auth::user()}}</p>
 @endsection

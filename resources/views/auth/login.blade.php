@@ -38,17 +38,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">{{__('Type Utilsateur')}}</label>
-                            <div class="col-md-6 mt-2">
-                                <input type="radio" id="admin" name="role" value="admin">
-                                <label class="mr-3" for="admin">Admin</label>
-                                <input type="radio" id="medecin" name="role" value="medecin">
-                                <label class="mr-3" for="medecin">Medecin</label>
-                                <input type="radio" id="patient" name="role" value="patient">
-                                <label class="mr-3" for="patient">Patient</label>
-                            </div>
-                        </div>
+                        
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">

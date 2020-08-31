@@ -11,15 +11,17 @@ use PhpParser\Node\Stmt\Echo_;
  */
 
  class RoleChecker {
+
+    //const $DefaultUser  = new User();
      /**
      * @param User $user
      * @param string $role
      * @return bool
      */
-    public function check (User $user, string $role){
-        if ($user->hasRole(UserRole::ROLE_ADMIN)) return true;
-        if ($user->hasRole(UserRole::ROLE_MEDECIN)) return true;
-        if ($user->hasRole(UserRole::ROLE_PATIENT)) return true;
-        return $user->hasRole($role);
+    
+     public function check ($user, string $role = 'NO ROLE'){
+        if (is_null($user)) return false;
+        if ($user->hasRole($role)) return true;
+        else return false;
     }
  }

@@ -8,9 +8,9 @@ namespace app\Role;
  */
 class UserRole {
 
-    const ROLE_ADMIN = 'ROLE_ADMIN';
-    const ROLE_MEDECIN = 'ROLE_MEDECIN';
-    const ROLE_PATIENT = 'ROLE_PATIENT';
+    const ROLE_ADMIN = 'Admin';
+    const ROLE_MEDECIN = 'Medecin';
+    const ROLE_PATIENT = 'Patient';
 
 
     /***

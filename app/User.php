@@ -53,7 +53,7 @@ class User extends Authenticatable
     */
     public function hasRole($role)
     {
-        return ($role == $this->getRoles());
+        return ($role == $this->getRole());
     }
 
 

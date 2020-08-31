@@ -63,11 +63,11 @@
                         <div class="form-group row">
                             <label class="col-md-4 col-form-label text-md-right">{{__('Type utilisateur')}}</label>
                             <div class="col-md-6 mt-2">
-                                <input type="radio" id="admin" name="role" value="admin">
+                                <input type="radio" id="admin" name="role" value="Admin">
                                 <label class="mr-3" for="admin">Admin</label>
-                                <input type="radio" id="medecin" name="role" value="medecin">
+                                <input type="radio" id="medecin" name="role" value="Medecin">
                                 <label class="mr-3" for="medecin">Medecin</label>
-                                <input type="radio" id="patient" name="role" value="patient">
+                                <input type="radio" id="patient" name="role" value="Patient">
                                 <label class="mr-3" for="patient">Patient</label>
                             </div>
                         </div>

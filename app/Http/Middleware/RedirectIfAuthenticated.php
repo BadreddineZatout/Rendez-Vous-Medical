@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use App\Providers\RouteServiceProvider;
+use App\Role\UserRole;
+use App\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,8 +20,25 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+        /*if (Auth::check()) {
+            $user = Auth::user();
+            if ($user->hasRole(UserRole::ROLE_ADMIN)){
+                return redirect('admin/admin')
+            }
+        }*/
+        if (Auth::check()) {
+            $user = Auth::user();
+            $role = $user->user_type;
+            if ($role == UserRole::ROLE_MEDECIN)
+            {
+                return redirect('medecin/home');
+            }
+            elseif ($role == UserRole::ROLE_ADMIN){
+                return redirect('admin/admin');
+            }else{
+                return redirect('patient/rdv');
+            }
+            return redirect('/');
         }
 
         return $next($request);
