@@ -19,10 +19,11 @@ class CreatePatientsTable extends Migration
             $table->string("PrenomPatient");
             $table->date("DateNaissance");
             $table->string("Telephone");
-            $table->string("Email");
             $table->unsignedBigInteger("Wilaya");
+            $table->unsignedBigInteger("Commune");
             $table->string("adresse");
             $table->foreign("Wilaya")->references("id")->on("wilayas")->onDelete("cascade");
+            $table->foreign("Commune")->references("id")->on("communes")->onDelete("cascade");
         });
     }
 

@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
+
+
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@aller');
@@ -31,3 +34,5 @@ Route::get('/Medecin', function(){
 })->middleware('check_user_role:' . \App\Role\UserRole::ROLE_MEDECIN);
  
 Route::resource('/Admin', 'AdminController');
+
+Route::get('/wilayaget', 'ListController');
