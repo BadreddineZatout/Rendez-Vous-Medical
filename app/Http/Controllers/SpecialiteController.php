@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Commune;
 use App\Specialite;
-use App\Wilaya;
 use Illuminate\Http\Request;
 
-class ListController extends Controller
+class SpecialiteController extends Controller
 {
     public function __invoke()
     {
-        return Wilaya::select('NomWilaya')->get();
+        return Specialite::select('NomSpecialite')->get();
     }
 }

@@ -43,7 +43,7 @@
                                 <button id="wilayachoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
                                     Wilaya
                                 </button>
-                                <div id="wilayalist" class="dropdown-menu">
+                                <div id="wilayalist" class="dropdown-menu overflow-auto" style="height: 10rem">
                                 </div>
                             </div> 
                         </div>
@@ -54,7 +54,7 @@
                                 <button id="communechoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
                                     Commune
                                 </button>
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu overflow-auto" style="height: 10rem">
                                  
                                 </div>
                             </div> 
@@ -135,8 +135,7 @@
                                 <button id="specialitechoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
                                     Specialite
                                 </button>
-                                <div class="dropdown-menu">
-                                  <!--Liste des Communes-->
+                                <div id="speclist" class="dropdown-menu overflow-auto" style="height: 10rem">
                                 </div>
                             </div> 
                         </div>

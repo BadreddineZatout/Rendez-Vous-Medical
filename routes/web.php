@@ -36,3 +36,4 @@ Route::get('/Medecin', function(){
 Route::resource('/Admin', 'AdminController');
 
 Route::get('/wilayaget', 'ListController');
+Route::get('/specget', 'SpecialiteController');
