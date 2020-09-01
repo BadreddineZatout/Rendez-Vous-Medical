@@ -33,7 +33,7 @@
                           <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '7h'">7h</a>
                           <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '8h'">8h</a>
                         </div>
-                      </div> 
+                    </div> 
                 </div>
 
                 <div class="form-group row">

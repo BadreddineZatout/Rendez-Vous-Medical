@@ -30,3 +30,4 @@ Route::get('/Medecin', function(){
     return view('medecin/home');
 })->middleware('check_user_role:' . \App\Role\UserRole::ROLE_MEDECIN);
  
+Route::resource('/Admin', 'AdminController');
