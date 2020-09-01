@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Commune;
 use App\Medecin;
 use App\Patient;
+use App\Wilaya;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,7 +18,9 @@ class AdminController extends Controller
     public function index()
     {
         $patient = new Patient();
-        $medecin = new medecin();
+        $medecin = new Medecin();
+        $wilaya = new Wilaya();
+        $commune = new Commune();
         return view('admin.admin',[
             'patients' => Patient::all(),
             'medecins' => Medecin::all()

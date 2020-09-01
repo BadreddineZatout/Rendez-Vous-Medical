@@ -20,7 +20,7 @@ class CreateMedecinsTable extends Migration
             $table->String("Adresse");
             $table->string("Cabinet");
             $table->string("PosGPS");
-            $table->string("Contact");
+            $table->string("Telephone");
             $table->unsignedBigInteger("Specialite");
             $table->unsignedBigInteger("Wilaya");
             $table->unsignedBigInteger("Commune");

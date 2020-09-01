@@ -20,12 +20,6 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        /*if (Auth::check()) {
-            $user = Auth::user();
-            if ($user->hasRole(UserRole::ROLE_ADMIN)){
-                return redirect('admin/admin')
-            }
-        }*/
         if (Auth::check()) {
             $user = Auth::user();
             $role = $user->user_type;
