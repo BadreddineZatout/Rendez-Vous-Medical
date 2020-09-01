@@ -11,6 +11,6 @@ class ListController extends Controller
 {
     public function __invoke()
     {
-        return Wilaya::select('NomWilaya')->get();
+        return [Wilaya::select('NomWilaya', 'CodeWilaya')->get(), Commune::select('NomCommune', 'Wilaya')->get()];
     }
 }

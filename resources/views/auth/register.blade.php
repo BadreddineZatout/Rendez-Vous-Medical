@@ -54,8 +54,7 @@
                                 <button id="communechoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
                                     Commune
                                 </button>
-                                <div class="dropdown-menu overflow-auto" style="height: 10rem">
-                                 
+                                <div id="communelist" class="dropdown-menu overflow-auto" style="height: 10rem">
                                 </div>
                             </div> 
                         </div>
