@@ -15,12 +15,12 @@ class CreateParametresTable extends Migration
     {
         Schema::create('parametres', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger("Medecin");
+            $table->unsignedBigInteger("Medecin");
             $table->time("Debut");
             $table->time("Fermeture");
             $table->integer("cycle");
             $table->integer("NombreRdv");
-            $table->foreign("Medecin")->references("IdMedecin")->on("medecins")->onDelete("cascade");
+            $table->foreign("Medecin")->references("id")->on("users")->onDelete("cascade");
         });
     }
 

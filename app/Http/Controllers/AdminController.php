@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Commune;
-use App\Medecin;
-use App\Patient;
-use App\Wilaya;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -18,8 +15,8 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.admin',[
-            'patients' => Patient::all(),
-            'medecins' => Medecin::all()
+            'patients' => User::select('Nom', 'Prenom', 'phone', 'Wilaya', 'Commune')->where('user_type', 'Patient')->get(),
+            'medecins' => User::select('Nom', 'Prenom', 'phone', 'Wilaya', 'Commune')->where('user_type', 'Medecin')->get()
         ]);
     }
 }

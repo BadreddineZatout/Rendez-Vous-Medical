@@ -14,14 +14,13 @@ class CreateRdvsTable extends Migration
     public function up()
     {
         Schema::create('rdvs', function (Blueprint $table) {
-            $table->BigInteger("NumeroRDV");
-            $table->unsignedInteger("Medecin");
+            $table->BigInteger("NumeroRDV")->primary();
+            $table->unsignedBigInteger("Medecin");
             $table->unsignedBigInteger("Patient");
             $table->date("DateRDV");
             $table->time("HeureRDV");
-            $table->primary(["Medecin", "Patient", "NumeroRDV"]);
-            $table->foreign("Medecin")->references("IdMedecin")->on("medecins")->onDelete("cascade");
-            $table->foreign("Patient")->references("IdPatient")->on("patients")->onDelete("cascade");
+            $table->foreign("Medecin")->references("id")->on("users")->onDelete("cascade");
+            $table->foreign("Patient")->references("id")->on("users")->onDelete("cascade");
         });
     }
 

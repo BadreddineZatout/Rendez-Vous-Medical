@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Patient;
 use Illuminate\Http\Request;
 use App\Rdv;
+use App\User;
+
 class MedecinController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class MedecinController extends Controller
         $today = date('Y/m/d');
         $rdvs = Rdv::select('NumeroRDV', 'Patient', 'HeureRDV')->where('DateRDV', $today)->get();
         foreach($rdvs as $r){
-            $p = Patient::select('NomPatient', 'PrenomPatient')->where('IdPatient', $r->Patient);
+            $p = User::select('nom', 'prenom')->where('id', $r->Patient)->get();
             $r->Patient = $p->NomPatient . ' ' . $p->PrenomPatient;
         }
         return view('medecin.home',[
