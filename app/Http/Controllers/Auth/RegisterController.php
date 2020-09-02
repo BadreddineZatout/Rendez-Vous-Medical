@@ -75,32 +75,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $wilaya = Wilaya::select('CodeWilaya')->where('NomWilaya', $data['wilayachoice'])->get();
-        $commune = Commune::select('id')->where('NomCommune', $data['communechoice'])->get();
-        $spec = Specialite::select('id')->where('NomSpecialite', $data['specialitechoice'])->get();
-        if ($data['role'] == 'Patient'){
-            Patient::create([
-                'NomPatient' => $data['nom'],
-                'PrenomPatient' => $data['prenom'],
-                'DateNaissance' => $data['dn'],
-                'Telephone' => $data['phone'],
-                'Wilaya' => $wilaya,
-                'Commune' => $commune,
-            ]);
-        }else{
-            Medecin::create([
-                'NomMedecin' => $data['nom'],
-                'PrenomMedecin' => $data['prenom'],
-                'Adresse' => $data['adr'],
-                'Cabinet' => $data['cabinet'],
-                'Telephone' => $data['phone'],
-                'Specialite' => $spec,
-                'Wilaya' => $wilaya,
-                'Commune' => $commune,
-            ]);
-        }
+        // $wilaya = Wilaya::select('CodeWilaya')->where('NomWilaya', $data['wilayachoice'])->get();
+        // $commune = Commune::select('id')->where('NomCommune', $data['communechoice'])->get();
+        // $spec = Specialite::select('id')->where('NomSpecialite', $data['specialitechoice'])->get();
+
         return User::create([
-            'name' => $data['prenom'],
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'date_naissance' => $data['dn'],
+            'Adresse' => $data['adr'],
+            'Cabinet' => $data['cabinet'],
+            'Specialite' => $spec,
+            'Wilaya' => $wilaya,
+            'Commune' => $commune,
             'phone' => $data['phone'],
             'user_type' => $data['role'],
             'password' => Hash::make($data['password']),
