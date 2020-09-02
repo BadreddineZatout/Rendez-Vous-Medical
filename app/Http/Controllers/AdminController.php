@@ -17,10 +17,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $patient = new Patient();
-        $medecin = new Medecin();
-        $wilaya = new Wilaya();
-        $commune = new Commune();
         return view('admin.admin',[
             'patients' => Patient::all(),
             'medecins' => Medecin::all()

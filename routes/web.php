@@ -20,20 +20,22 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@aller');
+Route::get('/wilayaget', 'ListController');
+Route::get('/specget', 'SpecialiteController');
 
 Route::get('/Admin', function(){
     return view('admin/admin');
-})->middleware('check_user_role:' . \App\Role\UserRole::ROLE_ADMIN);
+});//->middleware('check_user_role:' . \App\Role\UserRole::ROLE_ADMIN);
 
 Route::get('/Patient', function(){
     return view('patient/rdv');
-})->middleware('check_user_role:' . \App\Role\UserRole::ROLE_PATIENT);
+});//->middleware('check_user_role:' . \App\Role\UserRole::ROLE_PATIENT);
 
 Route::get('/Medecin', function(){
     return view('medecin/home');
-})->middleware('check_user_role:' . \App\Role\UserRole::ROLE_MEDECIN);
+});//->middleware('check_user_role:' . \App\Role\UserRole::ROLE_MEDECIN);
  
 Route::resource('/Admin', 'AdminController');
+//Route::resource('/Patient', 'PatientController');
 
-Route::get('/wilayaget', 'ListController');
-Route::get('/specget', 'SpecialiteController');
+

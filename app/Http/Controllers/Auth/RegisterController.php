@@ -57,6 +57,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nom' => ['required', 'string', 'min:2:', 'max:255'],
             'prenom' => ['required', 'string', 'min:2', 'max:255'],
+            'wilayachoice' => ['required'],
+            'communechoice' => ['required'],
             'adr' => ['required', 'string', 'min:10', 'max:255'],
             'phone' => ['required' ,'regex:/(0)[567][0-9]{8}/', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],

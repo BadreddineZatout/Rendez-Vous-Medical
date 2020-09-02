@@ -43,9 +43,14 @@
                         <div class="form-group row">
                             <label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label>
                             <div id="wilaya" class="dropdown col-md-4">
-                                <button id="wilayachoice" name="wilayachoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                                <button id="wilayachoice" name="wilayachoice" type="button" class="btn btn-outline-primary dropdown-toggle @error('wilayachoice') is-invalid @enderror" data-toggle="dropdown">
                                     Wilaya
                                 </button>
+                                @error('wilayachoice')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 <div id="wilayalist" class="dropdown-menu overflow-auto" style="height: 10rem">
                                 </div>
                             </div> 
@@ -54,18 +59,28 @@
                         <div class="form-group row">
                             <label for="commune" class="col-md-4 col-form-label text-md-right">{{__('Commune')}}</label>
                             <div id="commune" class="dropdown col-md-4">
-                                <button id="communechoice" name="communechoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                                <button id="communechoice" name="communechoice" type="button" class="btn btn-outline-primary dropdown-toggle @error('communechoice') is-invalid @enderror" data-toggle="dropdown">
                                     Commune
                                 </button>
+                                @error('communechoice')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 <div id="communelist" class="dropdown-menu overflow-auto" style="height: 10rem">
                                 </div>
                             </div> 
                         </div>
 
                         <div class="form-group row">
-                            <label for="adr" class="col-md-4 col-form-label text-md-right">{{ __('Adresse') }}</label>
+                            <label for="adr" class="col-md-4 col-form-label text-md-right @error('adr') is-invalid @enderror">{{ __('Adresse') }}</label>
                             <div class="col-md-6">
                                 <input id="adr" name="adr" type="text" class="form-control" value="{{ old('adr') }}" required>
+                                @error('adr')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -110,10 +125,15 @@
                             <div class="col-md-6 mt-2">
                                 <!--<input type="radio" id="admin" name="role" value="Admin">
                                 <label class="mr-3" for="admin">Admin</label>-->
-                                <input type="radio" id="medecin" name="role" value="Medecin">
+                                <input type="radio" id="medecin" name="role" value="Medecin" onclick="ToggleMedecin()">
                                 <label class="mr-3" for="medecin" onclick="ToggleMedecin()">Medecin</label>
-                                <input type="radio" id="patient" name="role" value="Patient">
+                                <input type="radio" id="patient" name="role" value="Patient" onclick="TogglePatient()">
                                 <label class="mr-3" for="patient" onclick="TogglePatient()">Patient</label>
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -127,7 +147,12 @@
                         <div id="cab" class="form-group row">
                             <label for="cabinet" class="col-md-4 col-form-label text-md-right">{{ __('Cabinet') }}</label>
                             <div class="col-md-6">
-                                <input id="cabinet" name="cabinet" type="text" class="form-control" value="{{ old('cabinet') }}">
+                                <input id="cabinet" name="cabinet" type="text" class="form-control @error('cabinet') is-invalid @enderror" value="{{ old('cabinet') }}">
+                                @error('cabinet')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
