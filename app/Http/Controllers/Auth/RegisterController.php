@@ -54,16 +54,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        return validator::make($data, [
             'nom' => ['required', 'string', 'min:2:', 'max:255'],
             'prenom' => ['required', 'string', 'min:2', 'max:255'],
-            'wilayachoice' => ['required'],
-            'communechoice' => ['required'],
+            //'wilayachoice' => ['required'],
+            //'communechoice' => ['required'],
             'adr' => ['required', 'string', 'min:10', 'max:255'],
             'phone' => ['required' ,'regex:/(0)[567][0-9]{8}/', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required'],
-            'cabinet' => ['string', 'max:255'],
+            //'cabinet' => ['string', 'max:255'],
         ]);
     }
 
@@ -75,17 +75,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // $wilaya = Wilaya::select('CodeWilaya')->where('NomWilaya', $data['wilayachoice'])->get();
-        // $commune = Commune::select('id')->where('NomCommune', $data['communechoice'])->get();
-        // $spec = Specialite::select('id')->where('NomSpecialite', $data['specialitechoice'])->get();
+         $wilaya = Wilaya::select('CodeWilaya')->where('NomWilaya', $data['wilayachoice'])->get();
+         $commune = Commune::select('id')->where('NomCommune', $data['communechoice'])->get();
+         $spec = Specialite::select('id')->where('NomSpecialite', $data['specialitechoice'])->get();
 
         return User::create([
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
-            'date_naissance' => $data['dn'],
-            'Adresse' => $data['adr'],
+            //'date_naissance' => $data['dn'],
+            'adresse' => $data['adr'],
             'Cabinet' => $data['cabinet'],
-            'Specialite' => $spec,
+            ///'Specialite' => $spec,
             'Wilaya' => $wilaya,
             'Commune' => $commune,
             'phone' => $data['phone'],

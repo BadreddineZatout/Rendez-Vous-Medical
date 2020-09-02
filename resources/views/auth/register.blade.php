@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div id="d1" class="container mt-5">
     <div class="row justify-content-center ">
         <div class="col-md-8">
             <div class="card">
@@ -43,35 +43,36 @@
                         <div class="form-group row">
                             <label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label>
                             <div id="wilaya" class="dropdown col-md-4">
-                                <button id="wilayachoice" name="wilayachoice" type="button" class="btn btn-outline-primary dropdown-toggle @error('wilayachoice') is-invalid @enderror" data-toggle="dropdown">
-                                    Wilaya
-                                </button>
-                                @error('wilayachoice')
+                                <select id="wilayachoice" name="wilayachoice" class="form-control overflow-auto btn btn-outline-primary @error('wilayachoice') is-invalid @enderror">
+                                  </select>
+                                  @error('wilayachoice')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                            <!--<div id="wilaya" class="dropdown col-md-4">
+                                <button id="wilayachoice" name="wilayachoice" type="button" class="btn btn-outline-primary dropdown-toggle @error('wilayachoice') is-invalid @enderror" data-toggle="dropdown">
+                                    Wilaya
+                                </button>
+                                
                                 <div id="wilayalist" class="dropdown-menu overflow-auto" style="height: 10rem">
                                 </div>
-                            </div> 
+                            </div> -->
                         </div>
 
                         <div class="form-group row">
                             <label for="commune" class="col-md-4 col-form-label text-md-right">{{__('Commune')}}</label>
                             <div id="commune" class="dropdown col-md-4">
-                                <button id="communechoice" name="communechoice" type="button" class="btn btn-outline-primary dropdown-toggle @error('communechoice') is-invalid @enderror" data-toggle="dropdown">
-                                    Commune
-                                </button>
+                                <select id="communechoice" name="communechoice" class="form-control btn btn-outline-primary @error('communechoice') is-invalid @enderror">
+                                </select>
                                 @error('communechoice')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <div id="communelist" class="dropdown-menu overflow-auto" style="height: 10rem">
-                                </div>
                             </div> 
                         </div>
-
                         <div class="form-group row">
                             <label for="adr" class="col-md-4 col-form-label text-md-right @error('adr') is-invalid @enderror">{{ __('Adresse') }}</label>
                             <div class="col-md-6">

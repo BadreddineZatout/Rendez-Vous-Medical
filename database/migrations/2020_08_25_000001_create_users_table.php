@@ -17,12 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->String("nom");
             $table->String("prenom");
-            $table->date("date_naissance");
+            $table->date("date_naissance")->nullable();
             $table->String("adresse");
-            $table->string("cabinet");
-            $table->unsignedBigInteger("specialite");
-            $table->unsignedBigInteger("wilaya");
-            $table->unsignedBigInteger("commune");
+            $table->string("cabinet")->nullable();
+            $table->unsignedBigInteger("specialite")->nullable();
+            $table->unsignedBigInteger("wilaya")->nullable();
+            $table->unsignedBigInteger("commune")->nullable();
             $table->string('phone')->unique();
             $table->string('user_type');
             $table->string('password');
