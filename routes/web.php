@@ -35,7 +35,8 @@ Route::get('/Medecin', function(){
     return view('medecin/home');
 });//->middleware('check_user_role:' . \App\Role\UserRole::ROLE_MEDECIN);
  
-Route::resource('/Admin', 'AdminController');
+Route::resource('/Admin', 'AdminController')->only(['index']);
+Route::resource('/Medecin', 'MedecinController')->only(['index']);
 //Route::resource('/Patient', 'PatientController');
 
 

@@ -100,7 +100,13 @@
                 </tr>
             </thead>
             <tbody>
-                
+                @foreach ($rdvs as $rdv)
+                    <tr>
+                        <td>{{$rdv->NumeroRDV}}</td>
+                        <td>{{$rdv->Patient}}</td>
+                        <td>{{$rdv->HeureRDV}}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
