@@ -9,7 +9,7 @@
     <div id="parametre" class="card my-5" style="margin-left: 13em">
         <div class="card-header bg-primary font-weight-bolder text-white">{{ __('parametres') }}</div>
         <div class="card-body">
-            <form action="">
+            <form id="parametre" action="">
                 @csrf
                 
                 <div class="form-group row">
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="HD" class="col-md-4 col-form-label text-md-right">{{__('Date de Debut')}}</label>
+                    <label for="HD" class="col-md-4 col-form-label text-md-right">{{__('Heure de Debut')}}</label>
                     <div id="HD" class="dropdown col-md-4">
                         <button id="HDchoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
                             Heure de Debut
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="HF" class="col-md-4 col-form-label text-md-right">{{__('Date de Fermeture')}}</label>
+                    <label for="HF" class="col-md-4 col-form-label text-md-right">{{__('Heure de Fermeture')}}</label>
                     <div id="HF" class="dropdown col-md-4">
                         <button id="HFchoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
                             Heure de Fermeture
@@ -90,4 +90,36 @@
             </form>
         </div>
     </div>
+    <div>
+        <table id="TableRdv" class="table-bordered table-primary table-responsive table-hover ml-5 mt-5">
+            <thead>
+                <tr>
+                    <th>Numero Rendez Vous</th>
+                    <th>Patient</th>
+                    <th>Heure du Rendez Vous</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var p = document.getElementById("parametre");
+        var r = document.getElementById("TableRdv");
+        p.style.display = "none";
+        r.style.display = "none";
+        document.getElementById("option1").addEventListener("click", RdvDisplay);
+        document.getElementById("option2").addEventListener("click", parametreDisplay);
+
+        function RdvDisplay(){
+            p.style.display = "none";
+            r.style.display = "table";
+        }
+        function parametreDisplay(){
+            r.style.display = "none";
+            p.style.display = "block";
+        }
+    </script>
 @endsection

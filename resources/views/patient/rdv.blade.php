@@ -57,6 +57,8 @@
                                     <th>Telephone</th>
                                     <th>Wilaya</th>
                                     <th>Commune</th>
+                                    <th>Addresse</th>
+                                    <th>Cabinet</th>
                                 </tr>
                             </thead>
                             <tbody>
