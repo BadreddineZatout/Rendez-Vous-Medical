@@ -9,6 +9,6 @@ class SpecialiteController extends Controller
 {
     public function __invoke()
     {
-        return Specialite::select('NomSpecialite')->get();
+        return Specialite::all();
     }
 }

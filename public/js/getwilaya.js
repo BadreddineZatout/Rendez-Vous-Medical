@@ -18,7 +18,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 wil.addEventListener("change", () => {
-    document.getElementById("w").remove();
     let code = wil.value;
     let xhr = new XMLHttpRequest();
     xhr.open("GET", `/communget=${code}`, true);
@@ -29,6 +28,7 @@ wil.addEventListener("change", () => {
         results.forEach(commun => {
             let li = document.createElement('option');
             li.innerText = commun.NomCommune;
+            li.value = commun.id;
             comm.appendChild(li);
         });
     });

@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row">
             <img src="#" alt="image" class="mx-auto d-block">
+            {{Auth::user()}}
         </div>
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -13,32 +14,26 @@
                 <div class="card-body row">
                     <div class="col-4">
                         <label for="specialite" class="col-md-4 col-form-label text-md-right">{{__('Specialite')}}</label>
-                        <div id="specialite" class="dropdown col-md-4">
-                            <button id="specialitechoice" name="specialitechoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
-                                Specialite
-                            </button>
-                            <div id="speclist" class="dropdown-menu overflow-auto" style="height: 10rem">
-                            </div>
+                        <div id="specialite" class="dropdown col">
+                            <select id="specialitechoice" name="specialitechoice" class="form-control overflow-auto btn btn-outline-primary">
+                                <option id="s" selected> Choisir la specialité</option>
+                            </select>
                         </div> 
                     </div>
                     <div class="col-4">
                         <label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label>
-                        <div id="wilaya" class="dropdown col-md-4">
-                            <button id="wilayachoice" name="wilayachoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
-                                Wilaya
-                            </button>
-                            <div id="wilayalist" class="dropdown-menu overflow-auto" style="height: 10rem">
-                            </div>
+                        <div id="wilaya" class="dropdown col">
+                            <select id="wilayachoice" name="wilayachoice" class="form-control overflow-auto btn btn-outline-primary">
+                                <option id='w' selected> Choisir la Wilaya</option>
+                            </select>
                         </div> 
                     </div>
                     <div class="col-4">
                         <label for="commune" class="col-md-4 col-form-label text-md-right">{{__('Commune')}}</label>
-                        <div id="commune" class="dropdown col-md-4">
-                            <button id="communechoice" name="communechoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
-                                Commune
-                            </button>
-                            <div id="communelist" class="dropdown-menu overflow-auto" style="height: 10rem">
-                            </div>
+                        <div id="commune" class="dropdown col">
+                            <select id="communechoice" name="communechoice" class="form-control btn btn-outline-primary">
+                                <option selected> Choisir la Commune</option>
+                            </select>
                         </div> 
                     </div>
                 </div>

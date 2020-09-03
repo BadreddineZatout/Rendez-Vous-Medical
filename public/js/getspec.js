@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
         results.forEach(spec => {
             let li = document.createElement('option');
             li.innerText = spec.NomSpecialite;
+            li.value = spec.id;
             specialite.appendChild(li);
         });
     });

@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form id="form" method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -45,7 +45,7 @@
                             <div id="wilaya" class="dropdown col-md-4">
                                 <select id="wilayachoice" name="wilayachoice" class="form-control overflow-auto btn btn-outline-primary @error('wilayachoice') is-invalid @enderror">
                                     <option id='w' selected> Choisir la Wilaya</option>
-                                  </select>
+                                </select>
                                   @error('wilayachoice')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -155,7 +155,7 @@
                             <label for="specialite" class="col-md-4 col-form-label text-md-right">{{__('Specialite')}}</label>
                             <div id="specialite" class="dropdown col-md-4">
                                 <select id="specialitechoice" name="specialitechoice" class="form-control overflow-auto btn btn-outline-primary">
-                                    <option id="s" selected> Choisir la specialité</option>
+                                    <option id="s" value={{Null}} selected> Choisir la specialité</option>
                                 </select>
                             </div> 
                         </div>

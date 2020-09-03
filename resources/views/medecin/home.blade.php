@@ -25,34 +25,30 @@
                 <div class="form-group row">
                     <label for="HD" class="col-md-4 col-form-label text-md-right">{{__('Heure de Debut')}}</label>
                     <div id="HD" class="dropdown col-md-4">
-                        <button id="HDchoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
-                            Heure de Debut
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '6h'">6h</a>
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '7h'">7h</a>
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('HDchoice').innerHTML = '8h'">8h</a>
-                        </div>
+                        <select id="HDchoice" name="HFchoice" class="form-control btn btn-outline-primary">
+                            <option selected>Heure du Debut</option>
+                            <option value="6">6h</option>
+                            <option value="7">7h</option>
+                            <option value="8">8h</option>
+                        </select>
                     </div> 
                 </div>
 
                 <div class="form-group row">
                     <label for="HF" class="col-md-4 col-form-label text-md-right">{{__('Heure de Fermeture')}}</label>
                     <div id="HF" class="dropdown col-md-4">
-                        <button id="HFchoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
-                            Heure de Fermeture
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('HFchoice').innerHTML = '12h'">12h</a>
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('HFchoice').innerHTML = '15h'">15h</a>
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('HFchoice').innerHTML = '16h'">16h</a>
-                        </div>
-                      </div> 
+                          <select id="HFchoice" name="HFchoice" class="form-control btn btn-outline-primary">
+                            <option selected>Heure du Fermeture</option>
+                            <option value="12">12h</option>
+                            <option value="15">15h</option>
+                            <option value="16">16h</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="cycle" class="col-md-4 col-form-label text-md-right">{{__('Cycle de Rendez Vous')}}</label>
-                    <div class="col-md-8 mt-2">
+                    <div class="col mt-2">
                         <input type="radio" id="c1" name="cyclerdv" value="15min">
                         <label class="mr-3" for="c1">15min</label>
                         <input type="radio" id="c2" name="cyclerdv" value="20min">
@@ -69,15 +65,13 @@
                 <div class="form-group row">
                     <label for="nombre" class="col-md-4 col-form-label text-md-right">{{__('Nombre de Rendez Vous')}}</label>
                     <div id="nombre" class="dropdown col-md-4">
-                        <button id="nombrerdv" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
-                          Nombre de Rendez Vous
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('nombrerdv').innerHTML = 1">1</a>
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('nombrerdv').innerHTML = 2">2</a>
-                          <a class="dropdown-item" href="#" onclick="document.getElementById('nombrerdv').innerHTML = 3">3</a>
-                        </div>
-                      </div> 
+                        <select id="nombrerdv" name="nombrerdv" class="form-control btn btn-outline-primary">
+                            <option selected>Nombre des Rendez Vous</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div> 
                 </div>
 
                 <div class="form-group row mb-0">

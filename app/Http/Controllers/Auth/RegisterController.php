@@ -57,13 +57,12 @@ class RegisterController extends Controller
         return validator::make($data, [
             'nom' => ['required', 'string', 'min:2:', 'max:255'],
             'prenom' => ['required', 'string', 'min:2', 'max:255'],
-            //'wilayachoice' => ['required'],
-            //'communechoice' => ['required'],
+            'wilayachoice' => ['required', 'gt:0'],
+            'communechoice' => ['required', 'gt:0'],
             'adr' => ['required', 'string', 'min:10', 'max:255'],
             'phone' => ['required' ,'regex:/(0)[567][0-9]{8}/', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required'],
-            //'cabinet' => ['string', 'max:255'],
         ]);
     }
 
@@ -75,22 +74,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-         $wilaya = Wilaya::select('CodeWilaya')->where('NomWilaya', $data['wilayachoice'])->get();
-         $commune = Commune::select('id')->where('NomCommune', $data['communechoice'])->get();
-         $spec = Specialite::select('id')->where('NomSpecialite', $data['specialitechoice'])->get();
-
+        $spec = (int)$data['specialitechoice'];
         return User::create([
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
-            //'date_naissance' => $data['dn'],
+            'date_naissance' => $data['dn'],
             'adresse' => $data['adr'],
-            'Cabinet' => $data['cabinet'],
-            ///'Specialite' => $spec,
-            'Wilaya' => $wilaya,
-            'Commune' => $commune,
+            'cabinet' => $data['cabinet'],
+            'specialite' => $spec>0 ? $spec : NULL,
+            'wilaya' => (int)$data['wilayachoice'],
+            'commune' => (int)$data['communechoice'],
             'phone' => $data['phone'],
             'user_type' => $data['role'],
             'password' => Hash::make($data['password']),
         ]);
+        //return var_dump([(int)$data['specialitechoice'],$data['cabinet']]);
     }
 }

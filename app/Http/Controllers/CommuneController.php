@@ -9,6 +9,6 @@ class CommuneController extends Controller
 {
     public function __invoke($code)
     {
-        return Commune::select('NomCommune', 'Wilaya')->where('Wilaya',$code)->get();
+        return Commune::select('id', 'NomCommune')->where('Wilaya',$code)->get();
     }
 }
