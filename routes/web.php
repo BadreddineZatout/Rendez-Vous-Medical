@@ -20,7 +20,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@aller');
+
 Route::get('/wilayaget', 'ListController');
+Route::get("/communget={code}", 'CommuneController');
 Route::get('/specget', 'SpecialiteController');
 
 Route::get('/Admin', function(){

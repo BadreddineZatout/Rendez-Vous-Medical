@@ -44,6 +44,7 @@
                             <label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label>
                             <div id="wilaya" class="dropdown col-md-4">
                                 <select id="wilayachoice" name="wilayachoice" class="form-control overflow-auto btn btn-outline-primary @error('wilayachoice') is-invalid @enderror">
+                                    <option id='w' selected> Choisir la Wilaya</option>
                                   </select>
                                   @error('wilayachoice')
                                     <span class="invalid-feedback" role="alert">
@@ -51,20 +52,13 @@
                                     </span>
                                 @enderror
                             </div>
-                            <!--<div id="wilaya" class="dropdown col-md-4">
-                                <button id="wilayachoice" name="wilayachoice" type="button" class="btn btn-outline-primary dropdown-toggle @error('wilayachoice') is-invalid @enderror" data-toggle="dropdown">
-                                    Wilaya
-                                </button>
-                                
-                                <div id="wilayalist" class="dropdown-menu overflow-auto" style="height: 10rem">
-                                </div>
-                            </div> -->
                         </div>
 
                         <div class="form-group row">
                             <label for="commune" class="col-md-4 col-form-label text-md-right">{{__('Commune')}}</label>
                             <div id="commune" class="dropdown col-md-4">
                                 <select id="communechoice" name="communechoice" class="form-control btn btn-outline-primary @error('communechoice') is-invalid @enderror">
+                                    <option selected> Choisir la Commune</option>
                                 </select>
                                 @error('communechoice')
                                     <span class="invalid-feedback" role="alert">
@@ -160,11 +154,9 @@
                         <div id="spec" class="form-group row">
                             <label for="specialite" class="col-md-4 col-form-label text-md-right">{{__('Specialite')}}</label>
                             <div id="specialite" class="dropdown col-md-4">
-                                <button id="specialitechoice" name="specialitechoice" type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
-                                    Specialite
-                                </button>
-                                <div id="speclist" class="dropdown-menu overflow-auto" style="height: 10rem">
-                                </div>
+                                <select id="specialitechoice" name="specialitechoice" class="form-control overflow-auto btn btn-outline-primary">
+                                    <option id="s" selected> Choisir la specialité</option>
+                                </select>
                             </div> 
                         </div>
 
