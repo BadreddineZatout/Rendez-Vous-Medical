@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
+    <script src="{{ asset('js/saveParametre.js') }}" defer></script>
     <script>
         document.getElementById('option1').innerHTML = "Liste des Rendez-Vous"
         document.getElementById('option2').innerHTML = "Parametres"
@@ -25,44 +26,34 @@
                 <div class="form-group row">
                     <label for="HD" class="col-md-4 col-form-label text-md-right">{{__('Heure de Debut')}}</label>
                     <div id="HD" class="dropdown col-md-4">
-                        <select id="HDchoice" name="HFchoice" class="form-control btn btn-outline-primary">
-                            <option selected>Heure du Debut</option>
-                            <option value="6">6h</option>
-                            <option value="7">7h</option>
-                            <option value="8">8h</option>
-                        </select>
+                        <input id="HDchoice" type="time" class="form-control btn btn-outline-primary">
                     </div> 
                 </div>
 
                 <div class="form-group row">
                     <label for="HF" class="col-md-4 col-form-label text-md-right">{{__('Heure de Fermeture')}}</label>
                     <div id="HF" class="dropdown col-md-4">
-                          <select id="HFchoice" name="HFchoice" class="form-control btn btn-outline-primary">
-                            <option selected>Heure du Fermeture</option>
-                            <option value="12">12h</option>
-                            <option value="15">15h</option>
-                            <option value="16">16h</option>
-                        </select>
+                        <input id="HFchoice" type="time" class="form-control btn btn-outline-primary">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="cycle" class="col-md-4 col-form-label text-md-right">{{__('Cycle de Rendez Vous')}}</label>
+                    <label for="cycle" class="col-md-4 col-form-label text-md-right">{{__('Durée de Rendez Vous')}}</label>
                     <div class="col mt-2">
-                        <input type="radio" id="c1" name="cyclerdv" value="15min">
-                        <label class="mr-3" for="c1">15min</label>
-                        <input type="radio" id="c2" name="cyclerdv" value="20min">
-                        <label class="mr-3" for="c2">20min</label>
-                        <input type="radio" id="c3" name="cyclerdv" value="30min">
-                        <label class="mr-3" for="c3">30min</label>
-                        <input type="radio" id="c4" name="cyclerdv" value="1h">
-                        <label class="mr-3" for="c4">1h</label>
-                        <input type="radio" id="c5" name="cyclerdv" value="2h">
-                        <label for="c5">2h</label>
+                        <input type="radio" id="c1" name="cyclerdv" value="15min" onclick="calculNombreRdv('15min')">
+                        <label class="mr-3" for="c1" onclick="calculNombreRdv('15min')">15min</label>
+                        <input type="radio" id="c2" name="cyclerdv" value="20min" onclick="calculNombreRdv('20min')">
+                        <label class="mr-3" for="c2" onclick="calculNombreRdv('20min')">20min</label>
+                        <input type="radio" id="c3" name="cyclerdv" value="30min" onclick="calculNombreRdv('30min')">
+                        <label class="mr-3" for="c3" onclick="calculNombreRdv('30min')">30min</label>
+                        <input type="radio" id="c4" name="cyclerdv" value="1h" onclick="calculNombreRdv('1h')">
+                        <label class="mr-3" for="c4" onclick="calculNombreRdv('1h')">1h</label>
+                        <input type="radio" id="c5" name="cyclerdv" value="2h" onclick="calculNombreRdv('2h')">
+                        <label for="c5" onclick="calculNombreRdv('2h')">2h</label>
                     </div>
-                </div>
+                </div>  
 
-                <div class="form-group row">
+                {{-- <div class="form-group row">
                     <label for="nombre" class="col-md-4 col-form-label text-md-right">{{__('Nombre de Rendez Vous')}}</label>
                     <div id="nombre" class="dropdown col-md-4">
                         <select id="nombrerdv" name="nombrerdv" class="form-control btn btn-outline-primary">
@@ -72,7 +63,7 @@
                             <option value="3">3</option>
                         </select>
                     </div> 
-                </div>
+                </div> --}}
 
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('js/getwilaya.js') }}" defer></script>
+<script src="{{ asset('js/getspec.js') }}" defer></script>
+
 <div id="d1" class="container mt-5">
     <div class="row justify-content-center ">
         <div class="col-md-8">

@@ -16,6 +16,7 @@ class CreateParametresTable extends Migration
         Schema::create('parametres', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("Medecin");
+            $table->boolean("etat");
             $table->time("Debut");
             $table->time("Fermeture");
             $table->integer("cycle");
