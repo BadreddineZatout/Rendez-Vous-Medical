@@ -22,14 +22,17 @@ class ParameterController extends Controller
             'HFchoice' => 'required',
             'cyclerdv' => 'required',
         ]);     
-        // TODO Change create to save
-        return Parametre::create([
-            'Medecin' => Auth::user()->id,
-            'etat' => $request->input('etatsysteme'),
-            'Debut' => $request->input('HDchoice'),
-            'Fermeture' => $request->input('HFchoice'),
-            'cycle' => $request->input('cyclerdv'),
-            'NombreRdv' => $request->input('nbr_rdv'),
-        ]);
+        
+
+        $para = new Parametre();
+        
+        $para->Medecin = Auth::user()->id;
+        $para->etat = $request->input('etatsysteme');
+        $para->Debut = $request->input('HDchoice');
+        $para->Fermeture = $request->input('HFchoice');
+        $para->cycle = $request->input('cyclerdv');
+        $para->NombreRdv = $request->input('nbr_rdv');
+        $para->save();
+        return redirect('/Medecin');
     }
 }

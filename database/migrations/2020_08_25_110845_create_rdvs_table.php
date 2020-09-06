@@ -19,6 +19,7 @@ class CreateRdvsTable extends Migration
             $table->unsignedBigInteger("Patient");
             $table->date("DateRDV");
             $table->time("HeureRDV");
+            $table->timestamps();
             $table->foreign("Medecin")->references("id")->on("users")->onDelete("cascade");
             $table->foreign("Patient")->references("id")->on("users")->onDelete("cascade");
         });

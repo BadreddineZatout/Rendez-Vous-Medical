@@ -42,15 +42,3 @@ para.addEventListener("click", (e)=>{
     paraform.submit();
 
 });
-
-// para.addEventListener("click", (e)=>{
-//     e.preventDefault();
-//     let xhr = new XMLHttpRequest();
-//     let csrf_token = document.querySelector('meta[name=csrf-token]').content;
-//     xhr.open("POST", `/Medecin/?parasave=${nbr_rdv}`, true);
-//     xhr.setRequestHeader('X-CSRF-Token', csrf_token);
-//     xhr.addEventListener('load', ()=>{
-//         console.log("sent");
-//     });
-//     xhr.send();
-// });

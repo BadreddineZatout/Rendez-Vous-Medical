@@ -19,8 +19,9 @@ class CreateParametresTable extends Migration
             $table->boolean("etat");
             $table->time("Debut");
             $table->time("Fermeture");
-            $table->integer("cycle");
+            $table->char('cycle', 10);
             $table->integer("NombreRdv");
+            $table->timestamps();
             $table->foreign("Medecin")->references("id")->on("users")->onDelete("cascade");
         });
     }

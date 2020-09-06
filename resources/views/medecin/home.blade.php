@@ -16,9 +16,9 @@
                 <div class="form-group row">
                     <label class="col-md-4 col-form-label text-md-right">{{__('Etat du Systeme')}}</label>
                     <div class="col-md-6 mt-2">
-                        <input type="radio" id="oui" name="etatsysteme" value="Oui">
+                        <input type="radio" id="oui" name="etatsysteme" value=1>
                         <label class="mr-5" for="oui">Oui</label>
-                        <input type="radio" id="non" name="etatsysteme" value="Non">
+                        <input type="radio" id="non" name="etatsysteme" value=0>
                         <label for="non">Non</label>
                     </div>
                 </div>
