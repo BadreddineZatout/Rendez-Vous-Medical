@@ -1,12 +1,11 @@
 const minutes = 1000 * 60;
-const hours = minutes * 60;
-const days = hours * 24;
-const years = days * 365;
+const para = document.getElementById("btnform");
+const paraform = document.querySelector('#paraform');
 
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var nbr_rdv = document.querySelector('#nbr_rdv');
 
-var nbr_rdv = 0;
 function calculNombreRdv(cyclerdv){
     let hd = document.getElementById("HDchoice").value;
     let hf = document.getElementById("HFchoice").value;
@@ -19,20 +18,39 @@ function calculNombreRdv(cyclerdv){
     let diff = (d2 - d1) / minutes;
     switch (cyclerdv){
         case "15min":
-            nbr_rdv = ~~(diff / 15);
+            nbr_rdv.value = ~~(diff / 15);
             break;
         case "20min":
-            nbr_rdv = ~~(diff / 20);
+            nbr_rdv.value = ~~(diff / 20);
             break;
         case "30min":
-            nbr_rdv = ~~(diff / 30);
+            nbr_rdv.value = ~~(diff / 30);
             break;
         case "1h":
-            nbr_rdv = ~~(diff / 60);
+            nbr_rdv.value = ~~(diff / 60);
             break;
         case "2h":
-            nbr_rdv = ~~(diff / 120);
+            nbr_rdv.value = ~~(diff / 120);
             break;
     }
-    alert(nbr_rdv);
 }
+
+para.addEventListener("click", (e)=>{
+    e.preventDefault();
+    paraform.action = "/Medecin/parasave";
+    paraform.method = "POST";
+    paraform.submit();
+
+});
+
+// para.addEventListener("click", (e)=>{
+//     e.preventDefault();
+//     let xhr = new XMLHttpRequest();
+//     let csrf_token = document.querySelector('meta[name=csrf-token]').content;
+//     xhr.open("POST", `/Medecin/?parasave=${nbr_rdv}`, true);
+//     xhr.setRequestHeader('X-CSRF-Token', csrf_token);
+//     xhr.addEventListener('load', ()=>{
+//         console.log("sent");
+//     });
+//     xhr.send();
+// });

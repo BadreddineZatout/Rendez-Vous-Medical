@@ -39,6 +39,7 @@ Route::get('/Medecin', function(){
  
 Route::resource('/Admin', 'AdminController')->only(['index']);
 Route::resource('/Medecin', 'MedecinController')->only(['index']);
+Route::resource("/Medecin/parasave", 'ParameterController')->only(['store']);
 //Route::resource('/Patient', 'PatientController');
 
 

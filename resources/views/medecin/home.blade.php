@@ -10,9 +10,9 @@
     <div id="parametre" class="card my-5" style="margin-left: 13em">
         <div class="card-header bg-primary font-weight-bolder text-white">{{ __('parametres') }}</div>
         <div class="card-body">
-            <form id="parametre" action="">
+            <form id="paraform" action="">
                 @csrf
-                
+                <input id="nbr_rdv" name="nbr_rdv" value="" style="display: none;">
                 <div class="form-group row">
                     <label class="col-md-4 col-form-label text-md-right">{{__('Etat du Systeme')}}</label>
                     <div class="col-md-6 mt-2">
@@ -26,14 +26,14 @@
                 <div class="form-group row">
                     <label for="HD" class="col-md-4 col-form-label text-md-right">{{__('Heure de Debut')}}</label>
                     <div id="HD" class="dropdown col-md-4">
-                        <input id="HDchoice" type="time" class="form-control btn btn-outline-primary">
+                        <input id="HDchoice" name="HDchoice" type="time" class="form-control btn btn-outline-primary">
                     </div> 
                 </div>
 
                 <div class="form-group row">
                     <label for="HF" class="col-md-4 col-form-label text-md-right">{{__('Heure de Fermeture')}}</label>
                     <div id="HF" class="dropdown col-md-4">
-                        <input id="HFchoice" type="time" class="form-control btn btn-outline-primary">
+                        <input id="HFchoice" name="HFchoice" type="time" class="form-control btn btn-outline-primary">
                     </div>
                 </div>
 
@@ -53,21 +53,9 @@
                     </div>
                 </div>  
 
-                {{-- <div class="form-group row">
-                    <label for="nombre" class="col-md-4 col-form-label text-md-right">{{__('Nombre de Rendez Vous')}}</label>
-                    <div id="nombre" class="dropdown col-md-4">
-                        <select id="nombrerdv" name="nombrerdv" class="form-control btn btn-outline-primary">
-                            <option selected>Nombre des Rendez Vous</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div> 
-                </div> --}}
-
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn btn-primary">
+                        <button id="btnform" type="submit" class="btn btn-primary">
                             {{ __('Sauvegarder') }}
                         </button>
                     </div>
