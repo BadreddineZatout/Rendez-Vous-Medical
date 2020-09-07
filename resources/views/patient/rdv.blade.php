@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('js/getwilaya.js') }}" defer></script>
+<script src="{{ asset('js/getspec.js') }}" defer></script>
+<script src="{{ asset('js/getmedecin.js') }}" defer></script>
+<img src="/images/image.jpg" alt="image" class="mx-auto d-block mb-5" style="height: 20em; width: 100%">
     <div class="container">
-        <div class="row">
-            <img src="#" alt="image" class="mx-auto d-block">
-            {{Auth::user()}}
-        </div>
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-12 border border-primary">
                 <div class="card-header bg-primary font-weight-bolder text-white">
                     {{ __('Chercher') }}
                 </div>
@@ -16,7 +16,7 @@
                         <label for="specialite" class="col-md-4 col-form-label text-md-right">{{__('Specialite')}}</label>
                         <div id="specialite" class="dropdown col">
                             <select id="specialitechoice" name="specialitechoice" class="form-control overflow-auto btn btn-outline-primary">
-                                <option id="s" selected> Choisir la specialité</option>
+                                <option id="s" value=0 selected> Choisir la specialité</option>
                             </select>
                         </div> 
                     </div>
@@ -24,7 +24,7 @@
                         <label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label>
                         <div id="wilaya" class="dropdown col">
                             <select id="wilayachoice" name="wilayachoice" class="form-control overflow-auto btn btn-outline-primary">
-                                <option id='w' selected> Choisir la Wilaya</option>
+                                <option id='w' value=0 selected> Choisir la Wilaya</option>
                             </select>
                         </div> 
                     </div>
@@ -32,7 +32,7 @@
                         <label for="commune" class="col-md-4 col-form-label text-md-right">{{__('Commune')}}</label>
                         <div id="commune" class="dropdown col">
                             <select id="communechoice" name="communechoice" class="form-control btn btn-outline-primary">
-                                <option selected> Choisir la Commune</option>
+                                <option value=0 selected> Choisir la Commune</option>
                             </select>
                         </div> 
                     </div>
@@ -52,11 +52,11 @@
                                     <th>Telephone</th>
                                     <th>Wilaya</th>
                                     <th>Commune</th>
-                                    <th>Addresse</th>
+                                    <th>Adresse</th>
                                     <th>Cabinet</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="medbody">
                                 
                             </tbody>
                         </table>

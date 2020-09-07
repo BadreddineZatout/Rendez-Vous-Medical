@@ -73,7 +73,7 @@
             </div>
         </nav>
 
-        <main>
+        <main style="background-color: #d3d3d3">
             @yield('content')
         </main>
     </div>

@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@aller');
 Route::get('/wilayaget', 'ListController');
 Route::get("/communget={code}", 'CommuneController');
 Route::get('/specget', 'SpecialiteController');
+Route::get('/medget/{s}/{w}/{c}', 'PatientController');
 
 Route::get('/Admin', function(){
     return view('admin/admin');

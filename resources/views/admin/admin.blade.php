@@ -14,11 +14,11 @@
         <tbody>
             @foreach ($medecins as $medecin)
                 <tr>
-                    <td>{{$medecin->NomMedecin}}</td>
-                    <td>{{$medecin->PrenomMedecin}}</td>
-                    <td>{{$medecin->Contact}}</td>
-                    <td>{{$medecin->Wilaya}}</td>
-                    <td>{{$medecin->Commune}}</td>
+                    <td>{{$medecin->nom}}</td>
+                    <td>{{$medecin->prenom}}</td>
+                    <td>{{$medecin->phone}}</td>
+                    <td>{{$medecin->wilaya}}</td>
+                    <td>{{$medecin->commune}}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -37,11 +37,11 @@
         <tbody>
             @foreach ($patients as $patient)
                 <tr>
-                    <td>{{$patient->NomPatien}}</td>
-                    <td>{{$patient->PrenomPatien}}</td>
-                    <td>{{$patient->Telephone}}</td>
-                    <td>{{$patient->Wilaya}}</td>
-                    <td>{{$patient->Commune}}</td>
+                    <td>{{$patient->nom}}</td>
+                    <td>{{$patient->prenom}}</td>
+                    <td>{{$patient->phone}}</td>
+                    <td>{{$patient->wilaya}}</td>
+                    <td>{{$patient->commune}}</td>
                 </tr>
             @endforeach
         </tbody>
