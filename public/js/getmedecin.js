@@ -1,11 +1,26 @@
 const med = document.querySelector("#medbody");
 const chercher = document.querySelector("#chercher");
+const filter = document.querySelector("#filtercommune");
 
 chercher.addEventListener("click", () => {
     med.innerText = "";
     let s = document.querySelector("#specialitechoice").value;
     let w = document.querySelector("#wilayachoice").value;
     let c = document.querySelector("#communechoice").value;
+    if (filter.checked) get_med(s, w, 0);
+    else get_med(s, w, c);
+});
+
+filter.addEventListener("click", ()=>{
+    let s = document.querySelector("#specialitechoice").value;
+    let w = document.querySelector("#wilayachoice").value;
+    let c = document.querySelector("#communechoice").value;
+    med.innerText = "";
+    if (filter.checked) get_med(s,w,0);
+    else get_med(s,w,c);
+});
+
+function get_med(s, w, c){
     let xhr = new XMLHttpRequest();
     xhr.open("GET", `/medget/${s}/${w}/${c}`, true);
     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
@@ -38,4 +53,4 @@ chercher.addEventListener("click", () => {
         });
     });
     xhr.send();
-});
+}

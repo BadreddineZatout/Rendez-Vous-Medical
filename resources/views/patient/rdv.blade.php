@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body row">
                     <div class="col-4">
-                        <label for="specialite" class="col-md-4 col-form-label text-md-right">{{__('Specialite')}}</label>
+                        <strong><label for="specialite" class="col-md-4 col-form-label text-md-right">{{__('Specialite')}}</label></strong>
                         <div id="specialite" class="dropdown col">
                             <select id="specialitechoice" name="specialitechoice" class="form-control overflow-auto btn btn-outline-primary">
                                 <option id="s" value=0 selected> Choisir la specialité</option>
@@ -21,7 +21,7 @@
                         </div> 
                     </div>
                     <div class="col-4">
-                        <label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label>
+                        <strong><label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label></strong>
                         <div id="wilaya" class="dropdown col">
                             <select id="wilayachoice" name="wilayachoice" class="form-control overflow-auto btn btn-outline-primary">
                                 <option id='w' value=0 selected> Choisir la Wilaya</option>
@@ -29,7 +29,7 @@
                         </div> 
                     </div>
                     <div class="col-4">
-                        <label for="commune" class="col-md-4 col-form-label text-md-right">{{__('Commune')}}</label>
+                        <strong><label for="commune" class="col-md-4 col-form-label text-md-right">{{__('Commune')}}</label></strong>
                         <div id="commune" class="dropdown col">
                             <select id="communechoice" name="communechoice" class="form-control btn btn-outline-primary">
                                 <option value=0 selected> Choisir la Commune</option>
@@ -42,9 +42,15 @@
                         Chercher
                     </button>
                 </div>
+
+                <div class=" row form-group ml-5 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="filtercommune">
+                    <label class="custom-control-label" for="filtercommune"><strong>Tous les medecins</strong></label>
+                </div>
+                
                 <div class="row">
                     <div class="col-sm-5 mr-5 ml-5 border border-primary">
-                        <table id="TableMedecins" class="table-bordered table-primary table-responsive table-hover">
+                        <table id="TableMedecins" class="table-bordered table-responsive table-hover">
                             <thead>
                                 <tr>
                                     <th>Nom</th>
