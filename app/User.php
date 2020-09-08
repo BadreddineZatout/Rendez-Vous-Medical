@@ -65,7 +65,7 @@ class User extends Authenticatable
         $role = $this->getAttribute('user_type');
 
         if (is_null($role)) {
-            $role = '';
+            $role = 'NO ROLE';
         }
 
         return $role;

@@ -4,6 +4,9 @@
 <script src="{{ asset('js/getwilaya.js') }}" defer></script>
 <script src="{{ asset('js/getspec.js') }}" defer></script>
 <script src="{{ asset('js/getmedecin.js') }}" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize" async defer></script>
+<script src="{{ asset('js/mapInput.js') }}" defer></script>
+
 <img src="/images/image.jpg" alt="image" class="mx-auto d-block mb-5" style="height: 20em; width: 100%">
     <div class="container">
         <div class="row justify-content-center">
@@ -67,8 +70,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-sm-5 border border-primary">
-                        
+                    <div id="address-map-container" class="col-sm-5 border border-primary" style="width:100%;height:400px;">
+                        <div id="address-map" style="height: 100%; width: 100%"></div>
                     </div>
                 </div>
                 <div class="clearfix">

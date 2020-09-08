@@ -28,15 +28,15 @@ Route::get('/medget/{s}/{w}/{c}', 'PatientController');
 
 Route::get('/Admin', function(){
     return view('admin/admin');
-});//->middleware('check_user_role:' . \App\Role\UserRole::ROLE_ADMIN);
+})->middleware('check_user_role:' . \App\Role\UserRole::ROLE_ADMIN);
 
 Route::get('/Patient', function(){
     return view('patient/rdv');
-});//->middleware('check_user_role:' . \App\Role\UserRole::ROLE_PATIENT);
+})->middleware('check_user_role:' . \App\Role\UserRole::ROLE_PATIENT);
 
 Route::get('/Medecin', function(){
     return view('medecin/home');
-});//->middleware('check_user_role:' . \App\Role\UserRole::ROLE_MEDECIN);
+})->middleware('check_user_role:' . \App\Role\UserRole::ROLE_MEDECIN);
  
 Route::resource('/Admin', 'AdminController')->only(['index']);
 Route::resource('/Medecin', 'MedecinController')->only(['index']);
