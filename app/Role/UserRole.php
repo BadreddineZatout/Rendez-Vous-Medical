@@ -16,13 +16,5 @@ class UserRole {
     /***
      * @return array
      */
-    public static function getRoleList()
-    {
-        return [
-            static::ROLE_ADMIN =>'Admin',
-            static::ROLE_MEDECIN => 'Medecin',
-            static::ROLE_PATIENT => 'Patient',
-        ];
-    }
 
 }
