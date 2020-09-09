@@ -50,6 +50,10 @@ function get_med(s, w, c){
             row.appendChild(commune);
             row.appendChild(adresse);
             row.appendChild(cabinet);
+            row.addEventListener("click", ()=>{
+                changeLocation(35.559435, 6.188062);
+                //initialize();
+            });
         });
     });
     xhr.send();

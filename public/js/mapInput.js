@@ -1,48 +1,63 @@
-var latitude = 35.553056;
-var longitude = 6.151416;
-var input = "";
-
+var latitude = 0; 
+var longitude = 0;
+var map;
+var marker;
 function initialize(){
-    const geocoder = new google.maps.Geocoder;
-    const map = new google.maps.Map(document.getElementById("address-map"), {
+    map = new google.maps.Map(document.getElementById("address-map"), {
         center: {lat: latitude, lng: longitude},
-        zoom: 13
+        zoom: 13,
     });
-    const marker = new google.maps.Marker({
+
+    marker = new google.maps.Marker({
         map: map,
-        position: {lat: latitude, lng: latitude}
+        position: {lat: latitude, lng: longitude},
     });
     marker.setVisible(true);
+}
 
-    /*const autocomplete = new google.map.places.autocomplete(input);
-    autocomplete.key = "adresse";
-
-    google.maps.event.addListener(autocomplete, 'place_changed', ()=> {
-        marker.setVisible(false);
-        const place = autocomplete.getPlace();
-
-        geocoder.geocode({'placeId': place.place_id}, function(results, status){
-            if (status == google.maps.GeocoderStatus.OK){
-                latitude = results[0].geometry.location.lat();
-                longitude = results[0].geometry.location.lng();
-            }
-        });
-
-        if (!place.geometry) {
-            window.alert("No details available for input: '" + place.name + "'");
-            input.value = "";
-            return;
-        }
-
-        if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-        } else {
-            map.setCenter(place.geometry.location);
-            map.setZoom(17);
-        }
-        marker.setPosition(place.geometry.location);
-        marker.setVisible(true);
-    });*/
+function changeLocation(lat, lng){
+    marker.setVisible(false);
+    latlng = new google.maps.LatLng({lat: lat, lng: lng});
+    map.panTo(latlng);
+    map.setZoom(17);
+    marker.setPosition(latlng);
+    marker.setVisible(true);
 }
 
 window.addEventListener("DOMContentLoaded", initialize());
+
+
+
+
+
+
+
+// const autocomplete = new google.maps.places.Autocomplete(input);
+    // autocomplete.bindTo("bounds", map);
+    // autocomplete.setFields(["address_components", "geometry", "icon", "name"]);
+    // autocomplete.addListener('place_changed', ()=> {
+    //     marker.setVisible(false);
+    //     const place = autocomplete.getPlace();
+
+    //     geocoder.geocode({'placeId': place.place_id}, function(results, status){
+    //         if (status == google.maps.GeocoderStatus.OK){
+    //             latitude = results[0].geometry.location.lat();
+    //             longitude = results[0].geometry.location.lng();
+    //         }
+    //     });
+
+    //     if (!place.geometry) {
+    //         window.alert("No details available for input: '" + place.name + "'");
+    //         input.value = "";
+    //         return;
+    //     }
+
+    //     if (place.geometry.viewport) {
+    //         map.fitBounds(place.geometry.viewport);
+    //     } else {
+    //         map.setCenter(place.geometry.location);
+    //         map.setZoom(17);
+    //     }
+    //     marker.setPosition(place.geometry.location);
+    //     marker.setVisible(true);
+    // });

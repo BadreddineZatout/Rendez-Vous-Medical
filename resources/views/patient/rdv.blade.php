@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize" async defer></script>
 <script src="{{ asset('js/getwilaya.js') }}" defer></script>
 <script src="{{ asset('js/getspec.js') }}" defer></script>
 <script src="{{ asset('js/getmedecin.js') }}" defer></script>
-<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize" async defer></script>
 <script src="{{ asset('js/mapInput.js') }}" defer></script>
 
 <img src="/images/image.jpg" alt="image" class="mx-auto d-block mb-5" style="height: 20em; width: 100%">
