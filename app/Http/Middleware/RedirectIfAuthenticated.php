@@ -29,12 +29,11 @@ class RedirectIfAuthenticated
             }
             elseif ($role == UserRole::ROLE_ADMIN){
                 return redirect('admin/admin');
-            }else{
-                return redirect('patient/rdv');
             }
-            return redirect('/');
+            elseif ($role == UserRole::ROLE_PATIENT){
+                return redirect('patient/rdv');
+            }else return redirect('/');
         }
-
         return $next($request);
     }
 }

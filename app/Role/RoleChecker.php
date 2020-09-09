@@ -21,7 +21,7 @@ use PhpParser\Node\Stmt\Echo_;
     
      public function check ($user, string $role = 'NO ROLE'){
         if (is_null($user)) return false;
-        if ($user->hasRole($role)) return true;
+        elseif ($user->hasRole($role)) return true;
         else return false;
     }
  }

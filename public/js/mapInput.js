@@ -2,8 +2,9 @@ var latitude = 35.539830;
 var longitude = 6.149844;;
 var map;
 var marker;
-const infowindow = new google.maps.InfoWindow();
-const infowindowContent = document.getElementById("infowindow-content");
+var infowindow;
+var infowindowContent;
+
 
 function initialize(){
     map = new google.maps.Map(document.getElementById("address-map"), {
@@ -15,7 +16,8 @@ function initialize(){
         map: map,
         position: {lat: latitude, lng: longitude},
     }); 
-
+    infowindow = new google.maps.InfoWindow();
+    infowindowContent = document.getElementById("infowindow-content");
     infowindow.setContent(infowindowContent);
 }
 

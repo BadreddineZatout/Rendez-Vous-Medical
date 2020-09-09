@@ -28,25 +28,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    // protected $casts = [
-    //     'date_naissance' => 'date',
-    // ];
-
-    /**
-    * @param array $roles
-    * @return $this
-    */
-    public function setRole(array $role)
-    {
-        $this->setAttribute('user_type', $role);
-        return $this;
-    }
-
     /***
     * @param $role
     * @return mixed
