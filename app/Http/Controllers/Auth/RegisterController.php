@@ -75,19 +75,23 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $spec = (int)$data['specialitechoice'];
+        $lat = (double)$data['lat'];
+        $lng = (double)$data['lng'];
         return User::create([
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
-            'date_naissance' => $data['dn'],
-            'adresse' => $data['adr'],
-            'cabinet' => $data['cabinet'],
-            'specialite' => $spec>0 ? $spec : NULL,
+            'user_type' => $data['role'],
             'wilaya' => (int)$data['wilayachoice'],
             'commune' => (int)$data['communechoice'],
             'phone' => $data['phone'],
-            'user_type' => $data['role'],
             'password' => Hash::make($data['password']),
+            'adresse' => $data['adr'],
+            'date_naissance' => $data['dn'],
+            'cabinet' => $data['cabinet'],
+            'specialite' => $spec>0 ? $spec : NULL,
+            'latitude' => $lat>0 ? $lat : NULL,
+            'longitude' => $lng>0 ? $lng : NULL,
         ]);
-        //return var_dump([(int)$data['specialitechoice'],$data['cabinet']]);
+        // return var_dump([(double)$data['lat'],(double)$data['lng']]);
     }
 }

@@ -46,38 +46,40 @@
                     </button>
                 </div>
 
-                <div class=" row form-group ml-5 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="filtercommune">
-                    <label class="custom-control-label" for="filtercommune"><strong>Tous les medecins</strong></label>
-                </div>
-                
-                <div class="row">
-                    <div class="col-sm-5 mr-5 ml-5 border border-primary">
-                        <table id="TableMedecins" class="table-bordered table-responsive table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Prenom</th>
-                                    <th>Telephone</th>
-                                    <th>Wilaya</th>
-                                    <th>Commune</th>
-                                    <th>Adresse</th>
-                                    <th>Cabinet</th>
-                                </tr>
-                            </thead>
-                            <tbody id="medbody">
-                                
-                            </tbody>
-                        </table>
+                <div id="search" class="container">
+                    <div class=" row form-group ml-5 custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="filtercommune">
+                        <label class="custom-control-label" for="filtercommune"><strong>Tous les medecins</strong></label>
                     </div>
-                    <div id="address-map-container" class="col-sm-5 border border-primary" style="width:100%;height:400px;">
-                        <div id="address-map" style="height: 100%; width: 100%"></div>
+                    <div class="row">
+                        <div class="col-sm-5 mr-5 ml-5 border border-primary">
+                            <table id="TableMedecins" class="table-bordered table-responsive table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th>Telephone</th>
+                                        <th>Wilaya</th>
+                                        <th>Commune</th>
+                                        <th>Adresse</th>
+                                        <th>Cabinet</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="medbody"></tbody>
+                            </table>
+                        </div>
+                        <div id="address-map-container" class="col-sm-5 border border-primary" style="width:100%;height:400px;">
+                        <div id="address-map" style="height: 100%; width: 100%"></div>                      
+                        </div>
+                        <div id="infowindow-content">
+                            <span id="message"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="clearfix">
-                    <button id="rdv" name="rdv" type="button" class="btn btn-primary mr-5 float-right mt-5">
-                        Resever Rendez Vous
-                    </button>
+                    <div class="clearfix">
+                        <button id="rdv" name="rdv" type="button" class="btn btn-primary mr-5 float-right mt-5">
+                            Resever Rendez Vous
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

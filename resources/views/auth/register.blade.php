@@ -163,6 +163,15 @@
                             </div> 
                         </div>
 
+                        <div id="gps" class="form-group row">
+                            <label for="pos" class="col-md-4 col-form-label text-md-right">{{ __('Position GPS') }}</label>
+
+                            <div id="pos" class="col-md-6">
+                                <input id="lat" type="text" class="form-control" name="lat" placeholder="Latitude" autocomplete="lat">
+                                <input id="lng" type="text" class="form-control mt-1" name="lng" placeholder="Longiude" autocomplete="lng">
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -181,20 +190,24 @@
     var dn = document.getElementById("datenaissance");
     var cabinet = document.getElementById("cab");
     var spec = document.getElementById("spec");
+    var gps = document.getElementById("gps");
 
     dn.style.display = "none";
     cabinet.style.display = "none";
     spec.style.display = "none";
+    gps.style.display = "none";
 
     function TogglePatient(){
         cabinet.style.display ="none";
         spec.style.display = "none";
+        gps.style.display = "none";
         dn.style.display = "";
     }
     function ToggleMedecin(){
         dn.style.display = "none";
         cabinet.style.display = "";
         spec.style.display = "";
+        gps.style.display = "";
     }
 </script>
 @endsection

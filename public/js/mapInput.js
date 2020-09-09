@@ -1,27 +1,37 @@
-var latitude = 0; 
-var longitude = 0;
+var latitude = 35.539830;
+var longitude = 6.149844;;
 var map;
 var marker;
+const infowindow = new google.maps.InfoWindow();
+const infowindowContent = document.getElementById("infowindow-content");
+
 function initialize(){
     map = new google.maps.Map(document.getElementById("address-map"), {
         center: {lat: latitude, lng: longitude},
-        zoom: 13,
+        zoom: 17,
     });
 
     marker = new google.maps.Marker({
         map: map,
         position: {lat: latitude, lng: longitude},
-    });
-    marker.setVisible(true);
+    }); 
+
+    infowindow.setContent(infowindowContent);
 }
 
 function changeLocation(lat, lng){
-    marker.setVisible(false);
-    latlng = new google.maps.LatLng({lat: lat, lng: lng});
-    map.panTo(latlng);
-    map.setZoom(17);
-    marker.setPosition(latlng);
-    marker.setVisible(true);
+    if (lat==null || lng==null){
+        infowindowContent.children["message"].textContent = "La Position de Medecin est Untrouvable";
+        infowindow.open(map, marker);
+    }
+    else{
+        infowindow.close();
+        latlng = new google.maps.LatLng({lat: lat, lng: lng});
+        map.panTo(latlng);
+        map.setZoom(17);
+        marker.setPosition(latlng);
+        marker.setVisible(true);
+    } 
 }
 
 window.addEventListener("DOMContentLoaded", initialize());

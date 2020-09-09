@@ -1,6 +1,8 @@
 const med = document.querySelector("#medbody");
 const chercher = document.querySelector("#chercher");
 const filter = document.querySelector("#filtercommune");
+var searchDiv = document.querySelector("#search");
+searchDiv.style.display = "none";
 
 chercher.addEventListener("click", () => {
     med.innerText = "";
@@ -9,6 +11,9 @@ chercher.addEventListener("click", () => {
     let c = document.querySelector("#communechoice").value;
     if (filter.checked) get_med(s, w, 0);
     else get_med(s, w, c);
+    if (s!=0 && w!=0){
+        searchDiv.style.display = "";
+    }else alert("il faut choisir la specilalité et la wilaya");
 });
 
 filter.addEventListener("click", ()=>{
@@ -51,8 +56,9 @@ function get_med(s, w, c){
             row.appendChild(adresse);
             row.appendChild(cabinet);
             row.addEventListener("click", ()=>{
-                changeLocation(35.559435, 6.188062);
-                //initialize();
+                let lat = m.latitude;
+                let lng = m.longitude;
+                changeLocation(lat, lng);
             });
         });
     });
