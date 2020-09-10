@@ -15,8 +15,8 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.admin',[
-            'patients' => User::select('nom', 'prenom', 'phone', 'wilaya', 'commune')->where('user_type', 'Patient')->get(),
-            'medecins' => User::select('nom', 'prenom', 'phone', 'wilaya', 'commune')->where('user_type', 'Medecin')->get()
+            'patients' => User::select('users.nom', 'users.prenom', 'users.phone', 'wilayas.NomWilaya', 'communes.NomCommune')->join('wilayas', 'wilayas.id', '=', 'users.wilaya')->join('communes', 'communes.id', '=', 'users.commune')->where('users.user_type', 'Patient')->get(),
+            'medecins' => User::select('users.nom', 'users.prenom', 'users.phone', 'wilayas.NomWilaya', 'communes.NomCommune')->join('wilayas', 'wilayas.id', '=', 'users.wilaya')->join('communes', 'communes.id', '=', 'users.commune')->where('users.user_type', 'Medecin')->get()
         ]);
     }
 }

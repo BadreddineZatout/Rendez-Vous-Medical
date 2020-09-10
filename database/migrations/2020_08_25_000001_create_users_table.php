@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger("commune")->nullable();
             $table->string('phone')->unique();
             $table->string('password');
+            $table->string('sex');
             $table->String("adresse");            
             $table->date("date_naissance")->nullable();            
             $table->string("cabinet")->nullable();

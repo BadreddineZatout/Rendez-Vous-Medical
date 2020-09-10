@@ -62,6 +62,7 @@ class RegisterController extends Controller
             'adr' => ['required', 'string', 'min:10', 'max:255'],
             'phone' => ['required' ,'regex:/(0)[567][0-9]{8}/', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'sex' => ['required'],
             'role' => ['required'],
         ]);
     }
@@ -85,6 +86,7 @@ class RegisterController extends Controller
             'commune' => (int)$data['communechoice'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
+            'sex' => $data['sex'],
             'adresse' => $data['adr'],
             'date_naissance' => $data['dn'],
             'cabinet' => $data['cabinet'],

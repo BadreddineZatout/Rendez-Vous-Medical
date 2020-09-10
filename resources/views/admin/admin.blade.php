@@ -22,8 +22,8 @@
                         <td>{{$medecin->nom}}</td>
                         <td>{{$medecin->prenom}}</td>
                         <td>{{$medecin->phone}}</td>
-                        <td>{{$medecin->wilaya}}</td>
-                        <td>{{$medecin->commune}}</td>
+                        <td>{{$medecin->NomWilaya}}</td>
+                        <td>{{$medecin->NomCommune}}</td>
                     </tr>
                 @endforeach
             </tbody>
@@ -46,8 +46,8 @@
                         <td>{{$patient->nom}}</td>
                         <td>{{$patient->prenom}}</td>
                         <td>{{$patient->phone}}</td>
-                        <td>{{$patient->wilaya}}</td>
-                        <td>{{$patient->commune}}</td>
+                        <td>{{$patient->NomWilaya}}</td>
+                        <td>{{$patient->NomCommune}}</td>
                     </tr>
                 @endforeach
             </tbody>
