@@ -94,6 +94,5 @@ class RegisterController extends Controller
             'latitude' => $lat>0 ? $lat : NULL,
             'longitude' => $lng>0 ? $lng : NULL,
         ]);
-        // return var_dump([(double)$data['lat'],(double)$data['lng']]);
     }
 }
