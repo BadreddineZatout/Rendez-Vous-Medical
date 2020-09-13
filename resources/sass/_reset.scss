@@ -6,5 +6,8 @@
     font-family: "open sans", sans-serif;
     font-weight: normal;
     line-height: 1;
-    text-decoration: none;
+    color: inherit;
+    a {
+        text-decoration: none;
+    }
 }
