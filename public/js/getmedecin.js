@@ -41,13 +41,15 @@ function get_med(s, w, c){
             let commune = document.createElement('td');
             let adresse = document.createElement('td');
             let cabinet = document.createElement('td');
+
             nom.innerText = m.nom;
             prenom.innerText = m.prenom;
             phone.innerText = m.phone;
-            wilaya.innerText = m.wilaya;
+            wilaya.innerText = m.NomWilaya;
             commune.innerText = m.NomCommune;
             adresse.innerText = m.adresse;
             cabinet.innerText = m.cabinet;
+
             row.appendChild(nom);
             row.appendChild(prenom);
             row.appendChild(phone);
@@ -55,6 +57,7 @@ function get_med(s, w, c){
             row.appendChild(commune);
             row.appendChild(adresse);
             row.appendChild(cabinet);
+            
             row.addEventListener("click", ()=>{
                 let lat = m.latitude;
                 let lng = m.longitude;

@@ -44,6 +44,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">{{__('Sex')}}</label>
+                            <div class="col-md-6 mt-2">
+                                <input type="radio" id="masculin" name="sex" value="Masculin">
+                                <label class="mr-3" for="masculin">Masculin</label>
+                                <input type="radio" id="feminin" name="sex" value="Feminin">
+                                <label class="mr-3" for="feminin">Feminin</label>
+                                @error('sex')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="wilaya" class="col-md-4 col-form-label text-md-right">{{__('Wilaya')}}</label>
                             <div id="wilaya" class="dropdown col-md-4">
                                 <select id="wilayachoice" name="wilayachoice" class="form-control overflow-auto btn btn-outline-primary @error('wilayachoice') is-invalid @enderror">
@@ -121,8 +135,6 @@
                         <div class="form-group row">
                             <label class="col-md-4 col-form-label text-md-right">{{__('Type utilisateur')}}</label>
                             <div class="col-md-6 mt-2">
-                                <!--<input type="radio" id="admin" name="role" value="Admin">
-                                <label class="mr-3" for="admin">Admin</label>-->
                                 <input type="radio" id="medecin" name="role" value="Medecin" onclick="ToggleMedecin()">
                                 <label class="mr-3" for="medecin" onclick="ToggleMedecin()">Medecin</label>
                                 <input type="radio" id="patient" name="role" value="Patient" onclick="TogglePatient()">
