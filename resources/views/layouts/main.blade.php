@@ -10,10 +10,10 @@
                         <h3 class="text-center text-light font-weight-bolder">Bienvenu {{ Auth::user()->prenom ?? 'Client' }}</h1>
                     </div>
                     <div class="col-sm-12 mb-5">
-                        <button id="option1" class="btn btn-lg btn-outline-light btn-block font-weight-bolder">Medecins</button>
+                        <button id="option1" class="btn TableSelect">Medecins</button>
                     </div>   
                     <div class="col-sm-12 ">
-                        <button id="option2" class="btn btn-lg btn-outline-light btn-block font-weight-bolder">Patients</button>
+                        <button id="option2" class="btn TableSelect">Patients</button>
                     </div>
             </div>
         </div>
