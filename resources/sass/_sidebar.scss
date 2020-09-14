@@ -1,0 +1,30 @@
+.sidebar {
+    padding: 10px 4px;
+    width: max-content;
+    height: 100vh;
+    background-color: #405497;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    .profile {
+        img {
+            width: 250px;
+            border-radius: 50%;
+        }
+        h3 {
+            font-size: 28px;
+            line-height: 1.6;
+        }
+    }
+    .navigation {
+        .btn {
+            display: block;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+    }
+}

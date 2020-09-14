@@ -1,0 +1,39 @@
+.content {
+    display: flex;
+    padding: 40px;
+}
+.SelectContainer {
+    max-width: 100%;
+    select {
+        width: max-content;
+        height: 50px;
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 16px;
+        padding: 0.6em 1.4em 0.5em 0.8em;
+        border: 1px solid #aaa;
+        appearance: none;
+        background-color: #fff;
+        outline: none;
+        &:nth-child(1) {
+            width: 415px;
+        }
+        &:nth-child(3) {
+            width: 300px;
+        }
+        option {
+            // max-height: 80px;
+            // padding: 10px;
+        }
+    }
+    .btn {
+        height: 50px;
+        width: 100px;
+        border: 1px solid #aaa;
+        transition: color 50ms linear, background-color 80ms linear;
+        &:hover {
+            background-color: #aaa;
+            color: #fff;
+        }
+    }
+}

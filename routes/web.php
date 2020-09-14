@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
-
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@aller');
 
@@ -32,7 +30,7 @@ Route::get('/Admin', function(){
 
 Route::get('/Patient', function(){
     return view('patient/rdv');
-})->middleware('check_user_role:' . "Patient");
+});//->middleware('check_user_role:' . "Patient");
 
 Route::get('/Medecin', function(){
     return view('medecin/home');
