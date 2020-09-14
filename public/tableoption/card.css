@@ -39,7 +39,7 @@ body {
   -ms-grid-rows: 1fr max-content;
       grid-template-rows: 1fr -webkit-max-content;
       grid-template-rows: 1fr max-content;
-  height: 280px;
+  height: 350px;
   width: 640px;
   background-color: #f7f7f7;
   gap: 10px;

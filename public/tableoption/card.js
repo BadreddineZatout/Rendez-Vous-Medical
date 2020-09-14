@@ -86,6 +86,7 @@ class MedCard {
         this.div_info[0].appendChild(this.name);
         continue;
       }
+      
       this.span_title[i-1].appendChild(this.icon[i-1]);
       this.span_title[i-1].appendChild(this.span_data[i-1]);
       this.div_info[i].appendChild(this.span_title[i-1]);
