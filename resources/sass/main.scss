@@ -6,10 +6,12 @@ body {
     overflow: hidden;
 }
 
+@import "./content";
+
 .MainHeader {
     width: 100%;
     height: 80px;
-    background-color: rgb(71, 92, 161);
+    background-color: #475ca1;
     display: flex;
     padding: 0 40px;
     align-items: center;
@@ -21,17 +23,8 @@ body {
 }
 
 .btn {
-    padding: 10px 0;
-    font-size: 20px;
-    color: #fff;
-    border: 1px solid #fff;
-    transition: background-color 80ms linear, color 50ms linear;
-    &:hover {
-        color: #fff;
-        background-color: #222;
-    }
-}
-
-.TableSelect {
-    min-width: 250px;
+    padding: 14px 0;
+    cursor: pointer;
+    background: none;
+    border: none;
 }

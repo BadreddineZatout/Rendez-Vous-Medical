@@ -1,7 +1,10 @@
-@extends('layouts.main')
+@extends('layouts.sidebar')
+
+<link rel="stylesheet" href="./css/medecin.css">
 
 @section('main')
-    <script src="{{ asset('js/saveParametre.js') }}" defer></script>
+    <div class="content">
+            <script src="{{ asset('js/saveParametre.js') }}" defer></script>
     <script>
         document.getElementById('option1').innerHTML = "Liste des Rendez-Vous"
         document.getElementById('option2').innerHTML = "Parametres"
@@ -52,7 +55,6 @@
                         <label for="c5" onclick="calculNombreRdv('2h')">2h</label>
                     </div>
                 </div>  
-
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button id="btnform" type="submit" class="btn btn-primary">
@@ -101,4 +103,5 @@
             p.style.display = "block";
         }
     </script>
+    </div>
 @endsection

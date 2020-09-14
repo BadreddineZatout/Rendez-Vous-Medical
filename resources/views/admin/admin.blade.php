@@ -1,8 +1,11 @@
-@extends('layouts.main')
+@extends('layouts.sidebar')
+
+<link rel="stylesheet" href="./css/admin.css">
 
 @section('main')
 
-    <link rel="stylesheet" href="./css/admin.css">
+    <div class="content">
+            <link rel="stylesheet" href="./css/admin.css">
     <script src="./js/admin.display.js" defer></script>
 
     <div id="SectionMedecins" class="SectionMedecins display-none">
@@ -52,6 +55,8 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+
     </div>
 
 @endsection
