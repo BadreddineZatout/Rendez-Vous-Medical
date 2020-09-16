@@ -28,13 +28,14 @@ Route::get('/Admin', function(){
     return view('admin/admin'); 
 }); //->middleware('check_user_role:' . "Admin");
 
+Route::get('/Medecin', function(){
+    return view('medecin/home');
+});//->middleware('check_user_role:' . "Medecin");
+
 Route::get('/Patient', function(){
     return view('patient/rdv');
 });//->middleware('check_user_role:' . "Patient");
 
-Route::get('/Medecin', function(){
-    return view('medecin/home');
-});//->middleware('check_user_role:' . "Medecin");
  
 Route::resource('/Admin', 'AdminController')->only(['index']); //->middleware('check_user_role:' . "Admin");
 Route::resource('/Medecin', 'MedecinController')->only(['index']);//->middleware('check_user_role:' . "Medecin");

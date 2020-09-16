@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar', ['icon1' => 'fa-user-md', 'param1' => 'Medecins', 'icon2' => 'fa-user-injured', 'param2' => 'Patients'])
 
 <link rel="stylesheet" href="./css/admin.css">
 

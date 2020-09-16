@@ -1,15 +1,17 @@
-@extends('layouts.sidebar')
+@extends('layouts.sidebar', ['icon1' => 'fas fa-file-alt', 'param1' => 'Rendez-vous', 'icon2' => 'fa-cog' ,'param2' => 'Parametres'])
 
 <link rel="stylesheet" href="./css/medecin.css">
 
 @section('main')
-    <div class="content">
-            <script src="{{ asset('js/saveParametre.js') }}" defer></script>
-    <script>
+<div class="content">
+    <script src="{{ asset('js/saveParametre.js') }}" defer></script>
+
+    {{-- <script>
         document.getElementById('option1').innerHTML = "Liste des Rendez-Vous"
         document.getElementById('option2').innerHTML = "Parametres"
         document.getElementById('profilphoto').src = '/images/doctor.png'
-    </script>
+    </script> --}}
+
     <div id="parametre" class="card my-5" style="margin-left: 13em">
         <div class="card-header bg-primary font-weight-bolder text-white">{{ __('parametres') }}</div>
         <div class="card-body">
@@ -65,6 +67,7 @@
             </form>
         </div>
     </div>
+
     <div>
         <table id="TableRdv" class="table-bordered table-primary table-responsive table-hover ml-5 mt-5">
             <thead>
@@ -103,5 +106,6 @@
             p.style.display = "block";
         }
     </script>
-    </div>
+</div>
+
 @endsection
