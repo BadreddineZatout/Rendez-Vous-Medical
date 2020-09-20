@@ -26,7 +26,7 @@ Route::get('/medget/{s}/{w}/{c}', 'PatientController');
 
 Route::get('/Admin', function(){
     return view('admin/admin'); 
-}); //->middleware('check_user_role:' . "Admin");
+})->middleware('check_user_role:' . "Admin");
 
 Route::get('/Medecin', function(){
     return view('medecin/home');
@@ -36,9 +36,15 @@ Route::get('/Patient', function(){
     return view('patient/rdv');
 });//->middleware('check_user_role:' . "Patient");
 
+<<<<<<< HEAD
+=======
+Route::get('/Medecin', function(){
+    return view('medecin/home');
+})->middleware('check_user_role:' . "Medecin");
+>>>>>>> 5228f994abcbf41a2a9a28b4d4586ff39111be1c
  
-Route::resource('/Admin', 'AdminController')->only(['index']); //->middleware('check_user_role:' . "Admin");
-Route::resource('/Medecin', 'MedecinController')->only(['index']);//->middleware('check_user_role:' . "Medecin");
+Route::resource('/Admin', 'AdminController')->only(['index'])->middleware('check_user_role:' . "Admin");
+Route::resource('/Medecin', 'MedecinController')->only(['index'])->middleware('check_user_role:' . "Medecin");
 Route::resource("/Medecin/parasave", 'ParameterController')->only(['store']);
 //Route::resource('/Patient', 'PatientController');
 
