@@ -1,38 +1,83 @@
 .content {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 40px;
+    column-gap: 10px;
+    overflow-y: auto;
+    width: 100%;
+    justify-content: space-between;
+    @media screen and (max-width: 600px) {
+        padding: 10px 0;
+        height: calc(100vh - 80px);
+    }
 }
 .SelectContainer {
-    max-width: 100%;
+    flex: 100%;
+    padding: 0 10px;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
+    height: max-content;
+    * {
+        margin: 5px;
+        @media screen and (max-width: 600px) {
+            margin: 0;
+            margin-bottom: 5px;
+        }
+    }
     select {
-        width: max-content;
-        height: 50px;
         display: inline-block;
-        margin: 0 10px;
+        max-width: 420px;
+        height: 50px;
         font-size: 16px;
-        padding: 0.6em 1.4em 0.5em 0.8em;
         border: 1px solid #aaa;
         appearance: none;
-        background-color: #fff;
         outline: none;
-        &:nth-child(1) {
-            width: 415px;
+        cursor: pointer;
+        background-color: #f8f8f8;
+        * {
+            background-color: #f8f8f8;
         }
-        &:nth-child(3) {
-            width: 300px;
-        }
-        @media screen and (max-width: 768px) {
-            display: block;
+        @media screen and (max-width: 600px) {
+            flex: unset;
+            width: 100%;
         }
     }
     .btn {
         height: 50px;
-        width: 100px;
+        width: 120px;
         border: 1px solid #aaa;
+        background-color: #f8f8f8;
+        display: inline-block;
         transition: color 50ms linear, background-color 80ms linear;
         &:hover {
             background-color: #aaa;
             color: #fff;
         }
+        @media screen and (max-width: 600px) {
+            width: 100%;
+        }
     }
+}
+
+.ListMed {
+    max-width: 680px;
+    max-height: 95%;
+    overflow-y: scroll;
+    padding: 20px 20px 20px 0;
+    @media screen and (max-width: 600px) {
+        padding: 0;
+        height: calc(100vh - 360px);
+        width: 100%;
+    }
+}
+
+.MapMed {
+    @media screen and (max-width: 1300px) {
+        display: none;
+    }
+    border: 1px solid #aaa;
+    height: 600px;
+    width: 600px;
 }

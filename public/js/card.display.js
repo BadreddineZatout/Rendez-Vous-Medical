@@ -1,10 +1,13 @@
 "use strict";
+var Selected;
 var MedCard = /** @class */ (function () {
     function MedCard(id, src, nom, prenom, numero, commune, address, cabine) {
+        var _this = this;
         this.div_info = [];
         this.span_title = [];
         this.icon = [];
         this.span_data = [];
+        this.Selected = false;
         this.card = document.createElement("div");
         this.card.classList.add("card", "select");
         this.input = document.createElement("input");
@@ -16,6 +19,25 @@ var MedCard = /** @class */ (function () {
         this.label.setAttribute("for", id);
         this.wrap = document.createElement("div");
         this.wrap.classList.add("wrap");
+        this.wrap.addEventListener("click", function () {
+            var cards = document.querySelectorAll(".wrap");
+            cards.forEach(function (element) {
+                element.classList.remove("Card-Selected");
+            });
+            _this.Selected = false;
+            Selected = NaN;
+            if (_this.Selected == false) {
+                _this.wrap.classList.add("Card-Selected");
+                _this.Selected = true;
+                Selected = id;
+                console.log("Id of selected card: " + Selected);
+            }
+            else {
+                _this.wrap.classList.remove("Card-Selected");
+                _this.wrap.classList.remove("Card-Selected");
+                _this.Selected = false;
+            }
+        });
         this.avatar = document.createElement("img");
         this.avatar.classList.add("avatar");
         this.avatar.setAttribute("src", src);
@@ -23,6 +45,7 @@ var MedCard = /** @class */ (function () {
         this.details.classList.add("details");
         this.btnSubmit = document.createElement("button");
         this.btnSubmit.classList.add("btnSubmit");
+        this.btnSubmit.classList.add("display-none");
         this.btnSubmit.innerText = "Reserer un rendez-vouz";
         this.div_info[0] = document.createElement("div");
         this.div_info[0].classList.add("info");
@@ -66,8 +89,8 @@ var MedCard = /** @class */ (function () {
                 continue;
             }
             this.span_title[i - 1].appendChild(this.icon[i - 1]);
-            this.span_title[i - 1].appendChild(this.span_data[i - 1]);
             this.div_info[i].appendChild(this.span_title[i - 1]);
+            this.div_info[i].appendChild(this.span_data[i - 1]);
         }
         for (var j = 0; j < 5; j++) {
             this.details.appendChild(this.div_info[j]);

@@ -1,3 +1,4 @@
+var Selected: number;
 class MedCard {
     public card: HTMLDivElement;
     public input: HTMLInputElement;
@@ -7,10 +8,11 @@ class MedCard {
     public details: HTMLDivElement;
     public btnSubmit: HTMLButtonElement;
     public name: HTMLHeadingElement;
-    public div_info = [];
-    public span_title = [];
-    public icon = [];
-    public span_data = [];
+    public div_info: Array<string> = [];
+    public span_title: Array<string> = [];
+    public icon: Array<string> = [];
+    public span_data: Array<string> = [];
+    public Selected: boolean = false;
 
     constructor(
         id: number,
@@ -36,6 +38,24 @@ class MedCard {
 
         this.wrap = document.createElement("div");
         this.wrap.classList.add("wrap");
+        this.wrap.addEventListener("click", () => {
+            let cards = document.querySelectorAll(".wrap");
+            cards.forEach((element) => {
+                element.classList.remove("Card-Selected");
+            });
+            this.Selected = false;
+            Selected = NaN;
+            if (this.Selected == false) {
+                this.wrap.classList.add("Card-Selected");
+                this.Selected = true;
+                Selected = id;
+                console.log("Id of selected card: " + Selected);
+            } else {
+                this.wrap.classList.remove("Card-Selected");
+                this.wrap.classList.remove("Card-Selected");
+                this.Selected = false;
+            }
+        });
 
         this.avatar = document.createElement("img");
         this.avatar.classList.add("avatar");
@@ -46,6 +66,7 @@ class MedCard {
 
         this.btnSubmit = document.createElement("button");
         this.btnSubmit.classList.add("btnSubmit");
+        this.btnSubmit.classList.add("display-none");
         this.btnSubmit.innerText = "Reserer un rendez-vouz";
 
         this.div_info[0] = document.createElement("div");
@@ -96,8 +117,8 @@ class MedCard {
                 continue;
             }
             this.span_title[i - 1].appendChild(this.icon[i - 1]);
-            this.span_title[i - 1].appendChild(this.span_data[i - 1]);
             this.div_info[i].appendChild(this.span_title[i - 1]);
+            this.div_info[i].appendChild(this.span_data[i - 1]);
         }
 
         for (let j = 0; j < 5; j++) {
