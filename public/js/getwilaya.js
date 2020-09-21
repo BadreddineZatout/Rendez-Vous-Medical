@@ -24,6 +24,10 @@ wil.addEventListener("change", () => {
     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
     xhr.addEventListener('load', () => {
         comm.innerHTML = "";
+        let touscomm = document.createElement('option');
+            touscomm.innerText = "Tous Les Commune";
+            touscomm.value = 0;
+            comm.appendChild(touscomm);
         results = JSON.parse(xhr.responseText);
         results.forEach(commun => {
             let li = document.createElement('option');

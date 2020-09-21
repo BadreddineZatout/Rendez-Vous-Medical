@@ -6,8 +6,13 @@ chercher.addEventListener("click", function () {
     var s = document.querySelector("#specialitechoice").value;
     var w = document.querySelector("#wilayachoice").value;
     var c = document.querySelector("#communechoice").value;
-    ListMed.innerHTML = "";
-    get_med(s, w, c);
+    if (s == 0  && w == 0){
+        alert("il faut choisir la specialite et la wilaya");
+    }
+    else{
+        ListMed.innerHTML = "";
+        get_med(s, w, c);
+    }
 });
 // filter.addEventListener("click", () => {
 //     let s = document.querySelector("#specialitechoice").value;

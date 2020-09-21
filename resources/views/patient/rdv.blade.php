@@ -20,12 +20,16 @@
             <option id='w' value=0 selected> Choisir la Wilaya</option>
         </select>
         <select id="communechoice" name="communechoice">
-            <option value=0 selected> Choisir la Commune</option>
+            <option value=0 selected>Tous Les Commune</option>
         </select>
         <button id="chercher" name="chercher" class="btn">Chercher</button>
     </div>
     <div id="ListMed" class="ListMed display-none"></div>
-    <div id="MapMed"" class="MapMed display-none"></div>
+    <div id="MapMed"" class="MapMed display-none">
+        <div id="infowindow-content">
+            <span id="message" class="title"></span>
+        </div>
+    </div>
 </div>
 
 @endsection

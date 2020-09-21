@@ -21,11 +21,11 @@ passwordInput.addEventListener("keyup", function () {
         passwordCheck = false;
     }
 });
-// loginSubmit.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     if (passwordCheck == true && phoneCheck == true) {
-//         loginForm.action = "/login";
-//         loginForm.method = "POST";
-//         loginForm.submit();
-//     }
-// });
+loginSubmit.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (passwordCheck == true && phoneCheck == true) {
+        loginForm.action = "/login";
+        loginForm.method = "POST";
+        loginForm.submit();
+    }
+});
