@@ -6,7 +6,7 @@ var infowindow;
 var infowindowContent;
 
 function initialize() {
-    map = new google.maps.Map(document.getElementById("address-map"), {
+    map = new google.maps.Map(document.getElementById("MapMed"), {
         center: { lat: latitude, lng: longitude },
         zoom: 17,
     });

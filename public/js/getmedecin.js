@@ -1,11 +1,12 @@
 "use strict";
 var chercher = document.querySelector("#chercher");
 var ListMed = document.querySelector("#ListMed");
-var MapMed = document.querySelector("#MapMed  ");
+var MapMed = document.querySelector("#MapMed");
 chercher.addEventListener("click", function () {
     var s = document.querySelector("#specialitechoice").value;
     var w = document.querySelector("#wilayachoice").value;
     var c = document.querySelector("#communechoice").value;
+    ListMed.innerHTML = "";
     get_med(s, w, c);
 });
 // filter.addEventListener("click", () => {
@@ -21,17 +22,21 @@ function get_med(s, w, c) {
     xhr.open("GET", "/medget/" + s + "/" + w + "/" + c, true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     xhr.addEventListener("load", function () {
-        // let results = JSON.parse(xhr.responseText);
         MapMed.classList.remove("display-none");
         ListMed.classList.remove("display-none");
-        results.forEach(function (m) {
-            var card = new MedCard(1, "./images/doctor.png", "tesllv", "testt", "0666223355", "batna", "batna", "Cabine B");
+        let results = JSON.parse(xhr.responseText);
+        results.forEach(m => {
+            if (m.sex == 'Masculin'){
+                var card = new MedCard(m.id, "./images/doctor.png", m.nom, m.prenom, m.phone, m.NomCommune, m.adresse, m.cabinet);
+            }else{
+                var card = new MedCard(m.id, "./images/doctor.png", m.nom, m.prenom, m.phone, m.NomCommune, m.adresse, m.cabinet);
+            }
             ListMed.appendChild(card);
-            // row.addEventListener("click", () => {
-            //     let lat = m.latitude;
-            //     let lng = m.longitude;
-            //     changeLocation(lat, lng);
-            // });
+            card.addEventListener("click", () => {
+                let lat = m.latitude;
+                let lng = m.longitude;
+                changeLocation(lat, lng);
+            });
         });
     });
     xhr.send();

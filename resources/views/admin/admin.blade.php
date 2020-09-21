@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="./css/admin.css">
 
 @section('main')
-
     <div class="content">
             <link rel="stylesheet" href="./css/admin.css">
     <script src="./js/admin.display.js" defer></script>
