@@ -6,10 +6,12 @@ var SectionPatients = document.querySelector("#SectionPatients");
 var BtnSectionMedecins = document.querySelector("#option1");
 var BtnSectionPatients = document.querySelector("#option2");
 BtnSectionMedecins.addEventListener("click", function () {
+    alert("medecin");
     SectionMedecins.classList.remove("display-none");
     SectionPatients.classList.add("display-none");
 });
 BtnSectionPatients.addEventListener("click", function () {
+    alert("patient");
     SectionMedecins.classList.add("display-none");
     SectionPatients.classList.remove("display-none");
 });

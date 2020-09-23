@@ -37,7 +37,10 @@ function get_med(s, w, c) {
                 var card = new MedCard(m.id, "./images/doctor.png", m.nom, m.prenom, m.phone, m.NomCommune, m.adresse, m.cabinet);
             }
             ListMed.appendChild(card);
+            card.id = "card" + m.id;
+            card.value = m.id;
             card.addEventListener("click", () => {
+                alert(card.id);
                 let lat = m.latitude;
                 let lng = m.longitude;
                 changeLocation(lat, lng);

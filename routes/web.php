@@ -23,6 +23,7 @@ Route::get('/wilayaget', 'ListController');
 Route::get("/communget={code}", 'CommuneController');
 Route::get('/specget', 'SpecialiteController');
 Route::get('/medget/{s}/{w}/{c}', 'PatientController');
+Route::resource("/rdv={data}", 'RdvController')->only(['store']);
 
 Route::get('/Admin', function(){
     return view('admin/admin'); 
@@ -39,6 +40,5 @@ Route::get('/Patient', function(){
 Route::resource('/Admin', 'AdminController')->only(['index']);//->middleware('check_user_role:' . "Admin");
 Route::resource('/Medecin', 'MedecinController')->only(['index']);//->middleware('check_user_role:' . "Medecin");
 Route::resource("/Medecin/parasave", 'ParameterController')->only(['store']);
-//Route::resource('/Patient', 'PatientController');
 
 
